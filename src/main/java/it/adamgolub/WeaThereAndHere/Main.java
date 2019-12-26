@@ -5,12 +5,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import net.aksingh.owmjapis.core.OWM;
+import net.aksingh.owmjapis.api.APIException;
+import net.aksingh.owmjapis.model.CurrentWeather;
 import java.io.IOException;
 
 /**
  * Created by Adam Gołub on 20.12.2019.
  */
+
 public class Main extends Application {
 
     private static Scene scene;
@@ -19,6 +22,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("GridPaneMain"));
         stage.setScene(scene);
+        //OWM owm = new OWM("40089bcd3a7da1d179139e9ed0126510");
         stage.show();
     }
 
@@ -31,8 +35,14 @@ public class Main extends Application {
         return fxmlLoader.load();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws APIException {
+        //OWM owm = new OWM("40089bcd3a7da1d179139e9ed0126510");
+        //CurrentWeather cwd = owm.currentWeatherByCityName("London");
+
+
+        //System.out.println("City: " + cwd.getCityName());
+        //System.out.println("Temperature: " + cwd.getMainData().getTempMax()
+        //        + "/" + cwd.getMainData().getTempMin() + "\'K");
         launch();
     }
-
 }

@@ -2,69 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c581d03-b9b3-413d-b793-4c34a6df1d6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeaThereAndHere.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WeaThereAndHere.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MainView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-01_1530392.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-02_1530391.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-03_1530390.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-04_1530389.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-05_1530388.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-06_1530386.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-07_1530387.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-08_1530385.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-09_1530384.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-10_1530382.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-11_1530383.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-12_1530381.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-13_1530380.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-14_1530379.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-15_1530378.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-16_1530377.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-17_1530376.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-18_1530375.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-19_1530374.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-20_1530372.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-21_1530373.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-22_1530369.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-23_1530363.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-24_1530371.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-25_1530370.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-26_1530361.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-27_1530368.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-28_1530367.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-29_1530366.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-30_1530365.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-31_1530364.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/iconfinder_weather-32_1530362.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/precipitation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/pressure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/temperature.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/wind.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/WeaThereAndHere/GridPaneMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/it/adamgolub/WeaThereAndHere/GridPaneMain.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/WeaThereAndHere/secondary.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/GridPaneMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/GridPaneMain.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1UkxG4O4fWrWf03yYu3qwFqu59g" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MojaBiblioteczka" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.22097379" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -72,7 +58,7 @@
       <recent name="it.adamgolub.WeaThereAndHere" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.openjfx.App" />
       <module name="WeaThereAndHere" />
@@ -86,7 +72,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.adamgolub.WeaThereAndHere.Main" />
       <module name="WeaThereAndHere" />
       <extension name="coverage">
@@ -99,9 +85,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.adamgolub.WeaThereAndHere.controllers.Main" />
+      <module name="WeaThereAndHere" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.adamgolub.WeaThereAndHere.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwmJapisExample1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.adamgolub.WeaThereAndHere.OwmJapisExample1" />
+      <module name="WeaThereAndHere" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.adamgolub.WeaThereAndHere.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.OwmJapisExample1" />
         <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
@@ -132,41 +146,86 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="406" width="466" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1576945075828">
+    <state x="-1218" y="128" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1577021568973">
+      <screen x="-1920" y="0" width="1536" height="832" />
+    </state>
+    <state x="-1218" y="128" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1577021568973" />
+    <state x="734" y="406" width="466" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1577104391399">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="734" y="406" width="466" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1576945075828" />
+    <state x="734" y="406" width="466" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577104391399" />
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577005689407">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577005689407" />
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1576954565118">
+    <state x="1122" y="238" key="FileChooserDialogImpl" timestamp="1577357358670">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="276" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1576954565118" />
-    <state width="937" height="282" key="GridCell.Tab.0.bottom" timestamp="1577005773833">
+    <state x="1122" y="238" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577357358670" />
+    <state width="937" height="274" key="GridCell.Tab.0.bottom" timestamp="1577378356668">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="937" height="282" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577005773833" />
-    <state width="937" height="282" key="GridCell.Tab.0.center" timestamp="1577005773833">
+    <state width="1493" height="205" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1577021586404" />
+    <state width="937" height="274" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577378356668" />
+    <state width="1557" height="282" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1577017916971" />
+    <state width="938" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577048310478" />
+    <state width="937" height="274" key="GridCell.Tab.0.center" timestamp="1577378356668">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="937" height="282" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577005773833" />
-    <state width="937" height="282" key="GridCell.Tab.0.left" timestamp="1577005773833">
+    <state width="1493" height="205" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1577021586404" />
+    <state width="937" height="274" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577378356668" />
+    <state width="1557" height="282" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1577017916971" />
+    <state width="938" height="249" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577048310478" />
+    <state width="937" height="274" key="GridCell.Tab.0.left" timestamp="1577378356668">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="937" height="282" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577005773833" />
-    <state width="937" height="282" key="GridCell.Tab.0.right" timestamp="1577005773833">
+    <state width="1493" height="205" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1577021586403" />
+    <state width="937" height="274" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577378356668" />
+    <state width="1557" height="282" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1577017916971" />
+    <state width="938" height="249" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577048310478" />
+    <state width="937" height="274" key="GridCell.Tab.0.right" timestamp="1577378356668">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="937" height="282" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577005773833" />
-    <state x="440" y="95" key="SettingsEditor" timestamp="1577005065582">
+    <state width="1493" height="205" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1577021586404" />
+    <state width="937" height="274" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577378356668" />
+    <state width="1557" height="282" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1577017916971" />
+    <state width="938" height="249" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577048310478" />
+    <state width="938" height="249" key="GridCell.Tab.1.bottom" timestamp="1577048310479">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="95" key="SettingsEditor/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577005065582" />
-    <state x="342" y="141" key="new project wizard" timestamp="1576844999754">
+    <state width="938" height="249" key="GridCell.Tab.1.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577031752348" />
+    <state width="938" height="249" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577048310479" />
+    <state width="938" height="249" key="GridCell.Tab.1.center" timestamp="1577048310479">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="342" y="141" key="new project wizard/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1576844999754" />
+    <state width="938" height="249" key="GridCell.Tab.1.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577031752348" />
+    <state width="938" height="249" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577048310479" />
+    <state width="938" height="249" key="GridCell.Tab.1.left" timestamp="1577048310479">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="249" key="GridCell.Tab.1.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577031752348" />
+    <state width="938" height="249" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577048310479" />
+    <state width="938" height="249" key="GridCell.Tab.1.right" timestamp="1577048310479">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="249" key="GridCell.Tab.1.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577031752348" />
+    <state width="938" height="249" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577048310479" />
+    <state x="490" y="176" key="Maven.ArtifactSearchDialog" timestamp="1577022347968">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="490" y="176" key="Maven.ArtifactSearchDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577022347968" />
+    <state x="625" y="219" key="NewModule_or_Project.wizard" timestamp="1577008443361">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="625" y="219" key="NewModule_or_Project.wizard/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577008443361" />
+    <state x="440" y="95" width="1273" height="849" key="SettingsEditor" timestamp="1577357349670">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1568" y="0" key="SettingsEditor/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1577021581283" />
+    <state x="440" y="95" width="1273" height="849" key="SettingsEditor/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577357349670" />
+    <state x="342" y="141" key="new project wizard" timestamp="1577008513678">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="141" key="new project wizard/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577008513678" />
   </component>
 </project>
