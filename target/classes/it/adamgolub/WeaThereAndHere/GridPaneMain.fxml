@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="TOP_CENTER" prefHeight="407.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane alignment="TOP_CENTER" prefHeight="407.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.adamgolub.WeaThereAndHere.GridPaneController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="299.0" minWidth="10.0" prefWidth="299.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.0" minWidth="10.0" prefWidth="308.0" />
@@ -25,7 +25,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="27.0" prefWidth="304.0">
                <children>
-                  <Label contentDisplay="CENTER" text="Białystok">
+                  <Label fx:id="firstCityName" contentDisplay="CENTER" text="Białystok">
                      <font>
                         <Font name="Palatino Linotype Bold" size="19.0" />
                      </font>
@@ -37,7 +37,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="27.0" prefWidth="304.0">
                <children>
-                  <Label contentDisplay="CENTER" text="Wednesday, 18/12/2019">
+                  <Label fx:id="todayDateInFirstCity" contentDisplay="CENTER" text="Wednesday, 18/12/2019">
                      <font>
                         <Font name="Palatino Linotype" size="17.0" />
                      </font>
@@ -48,7 +48,7 @@
                <children>
                   <VBox prefHeight="175.0" prefWidth="164.0">
                      <children>
-                        <ImageView fitHeight="175.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="todayWeatherFirstCityImage" fitHeight="175.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/iconfinder_weather-01_1530392.png" />
                            </image>
@@ -59,7 +59,7 @@
                      <children>
                         <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="141.0">
                            <children>
-                              <Label text="3">
+                              <Label fx:id="maxTempTodayFirstCity" text="3">
                                  <font>
                                     <Font name="Palatino Linotype Bold" size="30.0" />
                                  </font>
@@ -67,12 +67,12 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <Label alignment="BOTTOM_CENTER" text="°C">
+                              <Label fx:id="degreesUnits1" alignment="BOTTOM_CENTER" text="°C">
                                  <font>
                                     <Font name="Palatino Linotype Bold" size="30.0" />
                                  </font>
                               </Label>
-                              <Label text="-4" textFill="#808080">
+                              <Label fx:id="minTempTodayFirstCity" text="-4" textFill="#808080">
                                  <HBox.margin>
                                     <Insets left="10.0" />
                                  </HBox.margin>
@@ -80,7 +80,7 @@
                                     <Font name="Palatino Linotype Bold" size="30.0" />
                                  </font>
                               </Label>
-                              <Label text="°C" textFill="#808080">
+                              <Label fx:id="degreesUnits2" text="°C" textFill="#808080">
                                  <font>
                                     <Font name="Palatino Linotype Bold" size="30.0" />
                                  </font>
@@ -95,12 +95,12 @@
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="3.0" prefWidth="141.0">
                            <children>
-                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="todayPrecipitationFirstCityImage" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/precipitation.png" />
                                  </image>
                               </ImageView>
-                              <Label text="rainy">
+                              <Label fx:id="precipitationTodayFirstCity" text="rainy">
                                  <font>
                                     <Font name="Palatino Linotype Bold" size="15.0" />
                                  </font>
@@ -120,7 +120,7 @@
                                     <Image url="@../icons/wind.png" />
                                  </image>
                               </ImageView>
-                              <Label text="windy">
+                              <Label fx:id="windTodayFirstCity" text="windy">
                                  <font>
                                     <Font name="Palatino Linotype Bold" size="15.0" />
                                  </font>
@@ -140,7 +140,7 @@
                                     <Image url="@../icons/pressure.png" />
                                  </image>
                               </ImageView>
-                              <Label text="1021">
+                              <Label fx:id="pressureTodayFirstCity" text="1021">
                                  <font>
                                     <Font name="Palatino Linotype Bold" size="15.0" />
                                  </font>
@@ -165,7 +165,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="27.0" prefWidth="304.0">
                <children>
-                  <Label contentDisplay="CENTER" text="Rzym">
+                  <Label fx:id="secondCityName" contentDisplay="CENTER" text="Rzym">
                      <font>
                         <Font name="Palatino Linotype Bold" size="19.0" />
                      </font>
@@ -177,7 +177,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="27.0" prefWidth="304.0">
                <children>
-                  <Label contentDisplay="CENTER" text="Wednesday, 18/12/2019">
+                  <Label fx:id="todayDateinSecondCity" contentDisplay="CENTER" text="Wednesday, 18/12/2019">
                      <font>
                         <Font name="Palatino Linotype" size="17.0" />
                      </font>
@@ -190,7 +190,7 @@
                      <children>
                         <VBox prefHeight="175.0" prefWidth="164.0">
                            <children>
-                              <ImageView fitHeight="175.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="todayWeatherSecondCityImage" fitHeight="175.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/iconfinder_weather-08_1530385.png" />
                                  </image>
@@ -201,7 +201,7 @@
                            <children>
                               <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="141.0">
                                  <children>
-                                    <Label text="3">
+                                    <Label fx:id="maxTempTodaySecondCity" text="3">
                                        <font>
                                           <Font name="Palatino Linotype Bold" size="30.0" />
                                        </font>
@@ -209,12 +209,12 @@
                                           <Insets />
                                        </HBox.margin>
                                     </Label>
-                                    <Label alignment="BOTTOM_CENTER" text="°C">
+                                    <Label fx:id="degreesUnits3" alignment="BOTTOM_CENTER" text="°C">
                                        <font>
                                           <Font name="Palatino Linotype Bold" size="30.0" />
                                        </font>
                                     </Label>
-                                    <Label text="-4" textFill="#808080">
+                                    <Label fx:id="minTempTodaySecondCity" text="-4" textFill="#808080">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
@@ -222,7 +222,7 @@
                                           <Font name="Palatino Linotype Bold" size="30.0" />
                                        </font>
                                     </Label>
-                                    <Label text="°C" textFill="#808080">
+                                    <Label fx:id="degreesUnits4" text="°C" textFill="#808080">
                                        <font>
                                           <Font name="Palatino Linotype Bold" size="30.0" />
                                        </font>
@@ -237,12 +237,12 @@
                               </HBox>
                               <HBox alignment="CENTER_LEFT" prefHeight="3.0" prefWidth="141.0">
                                  <children>
-                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="todayPrecipitationSecondCityImage" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../icons/precipitation.png" />
                                        </image>
                                     </ImageView>
-                                    <Label text="rainy">
+                                    <Label fx:id="precipitationTodaySecondCity" text="rainy">
                                        <font>
                                           <Font name="Palatino Linotype Bold" size="15.0" />
                                        </font>
@@ -262,7 +262,7 @@
                                           <Image url="@../icons/wind.png" />
                                        </image>
                                     </ImageView>
-                                    <Label text="windy">
+                                    <Label fx:id="windTodaySecondCity" text="windy">
                                        <font>
                                           <Font name="Palatino Linotype Bold" size="15.0" />
                                        </font>
@@ -282,7 +282,7 @@
                                           <Image url="@../icons/pressure.png" />
                                        </image>
                                     </ImageView>
-                                    <Label text="1021">
+                                    <Label fx:id="pressureTodaySecondCity" text="1021">
                                        <font>
                                           <Font name="Palatino Linotype Bold" size="15.0" />
                                        </font>
@@ -311,7 +311,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="29.0" prefWidth="76.0">
                      <children>
-                        <Label alignment="CENTER" text="Thursday">
+                        <Label fx:id="tomorrowDateInFirstCity" alignment="CENTER" text="Thursday">
                            <font>
                               <Font name="Palatino Linotype Bold" size="14.0" />
                            </font>
@@ -320,7 +320,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="17.0" prefWidth="76.0">
                      <children>
-                        <ImageView fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="tomorrowWeatherFirstCityImage" fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/iconfinder_weather-05_1530388.png" />
                            </image>
@@ -329,17 +329,17 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label text="2">
+                        <Label fx:id="maxTempTomorrowFirstCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="°C">
+                        <Label fx:id="degreesUnits5" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="0" textFill="GREY">
+                        <Label fx:id="minTempTomorrowFirstCity" text="0" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -347,7 +347,7 @@
                               <Insets left="8.0" />
                            </HBox.margin>
                         </Label>
-                        <Label text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits6" text="°C" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -356,12 +356,12 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="21.0" prefWidth="76.0">
                      <children>
-                        <ImageView fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="tomorrowPrecipitationFirstCityImage" fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/precipitation.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="precipitationTomorrowFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -375,7 +375,7 @@
                               <Image url="@../icons/wind.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="windTomorrowFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -389,7 +389,7 @@
                               <Image url="@../icons/pressure.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="pressureTomorrowFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -402,7 +402,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="29.0" prefWidth="76.0">
                      <children>
-                        <Label alignment="CENTER" text="Friday">
+                        <Label fx:id="inTwoDaysDateInFirstCity" alignment="CENTER" text="Friday">
                            <font>
                               <Font name="Palatino Linotype Bold" size="14.0" />
                            </font>
@@ -411,7 +411,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="17.0" prefWidth="76.0">
                      <children>
-                        <ImageView fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="inTwoDaysWeatherFirstCityImage" fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/iconfinder_weather-05_1530388.png" />
                            </image>
@@ -420,17 +420,17 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label text="2">
+                        <Label fx:id="maxTempInTwoDaysFirstCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="°C">
+                        <Label fx:id="degreesUnits7" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="0" textFill="GREY">
+                        <Label fx:id="minTempInTwoDaysFirstCity" text="0" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -438,7 +438,7 @@
                               <Insets left="8.0" />
                            </HBox.margin>
                         </Label>
-                        <Label text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits8" text="°C" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -447,12 +447,12 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="21.0" prefWidth="76.0">
                      <children>
-                        <ImageView fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="inTwoDaysPrecipitationFirstCityImage" fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/precipitation.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="precipitationInTwoDaysFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -466,7 +466,7 @@
                               <Image url="@../icons/wind.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="windInTwoDaysFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -480,7 +480,7 @@
                               <Image url="@../icons/pressure.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="pressureInTwoDaysFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -493,7 +493,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="29.0" prefWidth="76.0">
                      <children>
-                        <Label alignment="CENTER" text="Saturday">
+                        <Label fx:id="inThreeDaysDateInFirstCity" alignment="CENTER" text="Saturday">
                            <font>
                               <Font name="Palatino Linotype Bold" size="14.0" />
                            </font>
@@ -502,7 +502,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="17.0" prefWidth="76.0">
                      <children>
-                        <ImageView fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="inThreeDaysWeatherFirstCityImage" fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/iconfinder_weather-05_1530388.png" />
                            </image>
@@ -511,17 +511,17 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label text="2">
+                        <Label fx:id="maxTempInThreeDaysFirstCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="°C">
+                        <Label fx:id="degreesUnits9" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="0" textFill="GREY">
+                        <Label fx:id="minTempInThreeDaysFirstCity" text="0" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -529,7 +529,7 @@
                               <Insets left="8.0" />
                            </HBox.margin>
                         </Label>
-                        <Label text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits10" text="°C" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -538,12 +538,12 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="21.0" prefWidth="76.0">
                      <children>
-                        <ImageView fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="inThreeDaysPrecipitationFirstCityImage" fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/precipitation.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="precipitationInThreeDaysFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -557,7 +557,7 @@
                               <Image url="@../icons/wind.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="windInThreeDaysFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -571,7 +571,7 @@
                               <Image url="@../icons/pressure.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="pressureInThreeDaysFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -584,7 +584,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="29.0" prefWidth="76.0">
                      <children>
-                        <Label alignment="CENTER" text="Sunday">
+                        <Label fx:id="inFourDaysDateInFirstCity" alignment="CENTER" text="Sunday">
                            <font>
                               <Font name="Palatino Linotype Bold" size="14.0" />
                            </font>
@@ -593,7 +593,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="17.0" prefWidth="76.0">
                      <children>
-                        <ImageView fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="inFourDaysWeatherFirstCityImage" fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/iconfinder_weather-05_1530388.png" />
                            </image>
@@ -602,17 +602,17 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label text="2">
+                        <Label fx:id="maxTempInFourDaysFirstCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="°C">
+                        <Label fx:id="degreesUnits11" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="0" textFill="GREY">
+                        <Label fx:id="minTempInFourDaysFirstCity" text="0" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -620,7 +620,7 @@
                               <Insets left="8.0" />
                            </HBox.margin>
                         </Label>
-                        <Label text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits12" text="°C" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -629,12 +629,12 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="21.0" prefWidth="76.0">
                      <children>
-                        <ImageView fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="inFourDaysPrecipitationFirstCityImage" fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/precipitation.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="precipitationinFourDaysFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -648,7 +648,7 @@
                               <Image url="@../icons/wind.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="windInFourDaysFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -662,7 +662,7 @@
                               <Image url="@../icons/pressure.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="pressureInFourDaysFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -679,7 +679,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="29.0" prefWidth="76.0">
                      <children>
-                        <Label alignment="CENTER" text="Thursday">
+                        <Label fx:id="tomorrowDateInSecondCity" alignment="CENTER" text="Thursday">
                            <font>
                               <Font name="Palatino Linotype Bold" size="14.0" />
                            </font>
@@ -688,7 +688,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="17.0" prefWidth="76.0">
                      <children>
-                        <ImageView fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="tomorrowWeatherSecondCityImage" fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/iconfinder_weather-05_1530388.png" />
                            </image>
@@ -697,17 +697,17 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label text="2">
+                        <Label fx:id="maxTempTomorrowSecondCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="°C">
+                        <Label fx:id="degreesUnits13" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="0" textFill="GREY">
+                        <Label fx:id="minTempTomorrowSecondCity" text="0" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -715,7 +715,7 @@
                               <Insets left="8.0" />
                            </HBox.margin>
                         </Label>
-                        <Label text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits14" text="°C" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -729,7 +729,7 @@
                               <Image url="@../icons/precipitation.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="precipitationTomorrowSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -743,7 +743,7 @@
                               <Image url="@../icons/wind.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="windTomorrowSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -757,7 +757,7 @@
                               <Image url="@../icons/pressure.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="pressureTomorrowSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -770,7 +770,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="29.0" prefWidth="76.0">
                      <children>
-                        <Label alignment="CENTER" text="Friday">
+                        <Label fx:id="inTwoDaysDateInSecondCity" alignment="CENTER" text="Friday">
                            <font>
                               <Font name="Palatino Linotype Bold" size="14.0" />
                            </font>
@@ -779,7 +779,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="17.0" prefWidth="76.0">
                      <children>
-                        <ImageView fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="inTwoDaysWeatherSecondCityImage" fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/iconfinder_weather-05_1530388.png" />
                            </image>
@@ -788,17 +788,17 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label text="2">
+                        <Label fx:id="maxTempInTwoDaysSecondCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="°C">
+                        <Label fx:id="degreesUnits15" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="0" textFill="GREY">
+                        <Label fx:id="minTempInTwoDaysSecondCity" text="0" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -806,7 +806,7 @@
                               <Insets left="8.0" />
                            </HBox.margin>
                         </Label>
-                        <Label text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits16" text="°C" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -820,7 +820,7 @@
                               <Image url="@../icons/precipitation.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="precipitationInTwoDaysSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -834,7 +834,7 @@
                               <Image url="@../icons/wind.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="windInTwoDaysSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -848,7 +848,7 @@
                               <Image url="@../icons/pressure.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="pressureInTwoDaysSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -861,7 +861,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="29.0" prefWidth="76.0">
                      <children>
-                        <Label alignment="CENTER" text="Saturday">
+                        <Label fx:id="inThreeDaysDateInSecondCity" alignment="CENTER" text="Saturday">
                            <font>
                               <Font name="Palatino Linotype Bold" size="14.0" />
                            </font>
@@ -870,7 +870,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="17.0" prefWidth="76.0">
                      <children>
-                        <ImageView fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="inThreeDaysWeatherSecondCityImage" fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/iconfinder_weather-05_1530388.png" />
                            </image>
@@ -879,17 +879,17 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label text="2">
+                        <Label fx:id="maxTempInThreeDaysSecondCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="°C">
+                        <Label fx:id="degreesUnits17" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="0" textFill="GREY">
+                        <Label fx:id="minTempInThreeDaysSecondCity" text="0" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -897,7 +897,7 @@
                               <Insets left="8.0" />
                            </HBox.margin>
                         </Label>
-                        <Label text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits18" text="°C" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -911,7 +911,7 @@
                               <Image url="@../icons/precipitation.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="precipitationInThreeDaysSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -925,7 +925,7 @@
                               <Image url="@../icons/wind.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="windInThreeDaysSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -939,7 +939,7 @@
                               <Image url="@../icons/pressure.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="pressureInThreeDaysSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -952,7 +952,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="29.0" prefWidth="76.0">
                      <children>
-                        <Label alignment="CENTER" text="Sunday">
+                        <Label fx:id="inFourDaysDateInSecondCity" alignment="CENTER" text="Sunday">
                            <font>
                               <Font name="Palatino Linotype Bold" size="14.0" />
                            </font>
@@ -961,7 +961,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="17.0" prefWidth="76.0">
                      <children>
-                        <ImageView fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="inFourDaysWeatherSecondCityImage" fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/iconfinder_weather-05_1530388.png" />
                            </image>
@@ -970,17 +970,17 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label text="2">
+                        <Label fx:id="maxTempInFourDaysSecondCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="°C">
+                        <Label fx:id="degreesUnits19" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="0" textFill="GREY">
+                        <Label fx:id="minTempInFourDaysSecondCity" text="0" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -988,7 +988,7 @@
                               <Insets left="8.0" />
                            </HBox.margin>
                         </Label>
-                        <Label text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits20" text="°C" textFill="GREY">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -1002,7 +1002,7 @@
                               <Image url="@../icons/precipitation.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="precipitationInFourDaysSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -1016,7 +1016,7 @@
                               <Image url="@../icons/wind.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="windInFourDaysSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -1030,7 +1030,7 @@
                               <Image url="@../icons/pressure.png" />
                            </image>
                         </ImageView>
-                        <Label text="Label">
+                        <Label fx:id="pressureInFourDaysSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
