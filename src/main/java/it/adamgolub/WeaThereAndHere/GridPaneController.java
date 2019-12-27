@@ -23,7 +23,7 @@ public class GridPaneController {
     @FXML
     private Label minTempTodayFirstCity;
     @FXML
-    private Label precipitationTodayFirstCity;
+    private Label humidityTodayFirstCity;
     @FXML
     private Label windTodayFirstCity;
     @FXML
@@ -34,11 +34,9 @@ public class GridPaneController {
     @FXML
     private ImageView tomorrowWeatherFirstCityImage;
     @FXML
-    private Label maxTempTomorrowFirstCity;
+    private Label tempTomorrowFirstCity;
     @FXML
-    private Label minTempTomorrowFirstCity;
-    @FXML
-    private Label precipitationTomorrowFirstCity;
+    private Label humidityTomorrowFirstCity;
     @FXML
     private Label windTomorrowFirstCity;
     @FXML
@@ -49,11 +47,9 @@ public class GridPaneController {
     @FXML
     private ImageView inTwoDaysWeatherFirstCityImage;
     @FXML
-    private Label maxTempInTwoDaysFirstCity;
+    private Label tempInTwoDaysFirstCity;
     @FXML
-    private Label minTempInTwoDaysFirstCity;
-    @FXML
-    private Label precipitationInTwoDaysFirstCity;
+    private Label humidityInTwoDaysFirstCity;
     @FXML
     private Label windInTwoDaysFirstCity;
     @FXML
@@ -64,11 +60,9 @@ public class GridPaneController {
     @FXML
     private ImageView inThreeDaysWeatherFirstCityImage;
     @FXML
-    private Label maxTempInThreeDaysFirstCity;
+    private Label tempInThreeDaysFirstCity;
     @FXML
-    private Label minTempInThreeDaysFirstCity;
-    @FXML
-    private Label precipitationInThreeDaysFirstCity;
+    private Label humidityInThreeDaysFirstCity;
     @FXML
     private Label windInThreeDaysFirstCity;
     @FXML
@@ -79,11 +73,9 @@ public class GridPaneController {
     @FXML
     private ImageView inFourDaysWeatherFirstCityImage;
     @FXML
-    private Label maxTempInFourDaysFirstCity;
+    private Label tempInFourDaysFirstCity;
     @FXML
-    private Label minTempInFourDaysFirstCity;
-    @FXML
-    private Label precipitationInFourDaysFirstCity;
+    private Label humidityInFourDaysFirstCity;
     @FXML
     private Label windInFourDaysFirstCity;
     @FXML
@@ -100,7 +92,7 @@ public class GridPaneController {
     @FXML
     private Label minTempTodaySecondCity;
     @FXML
-    private Label precipitationTodaySecondCity;
+    private Label humidityTodaySecondCity;
     @FXML
     private Label windTodaySecondCity;
     @FXML
@@ -115,7 +107,7 @@ public class GridPaneController {
     @FXML
     private Label minTempTomorrowSecondCity;
     @FXML
-    private Label precipitationTomorrowSecondCity;
+    private Label humidityTomorrowSecondCity;
     @FXML
     private Label windTomorrowSecondCity;
     @FXML
@@ -130,7 +122,7 @@ public class GridPaneController {
     @FXML
     private Label minTempInTwoDaysSecondCity;
     @FXML
-    private Label precipitationInTwoDaysSecondCity;
+    private Label humidityInTwoDaysSecondCity;
     @FXML
     private Label windInTwoDaysSecondCity;
     @FXML
@@ -145,7 +137,7 @@ public class GridPaneController {
     @FXML
     private Label minTempInThreeDaysSecondCity;
     @FXML
-    private Label precipitationInThreeDaysSecondCity;
+    private Label humidityInThreeDaysSecondCity;
     @FXML
     private Label windInThreeDaysSecondCity;
     @FXML
@@ -160,7 +152,7 @@ public class GridPaneController {
     @FXML
     private Label minTempInFourDaysSecondCity;
     @FXML
-    private Label precipitationInFourDaysSecondCity;
+    private Label humidityInFourDaysSecondCity;
     @FXML
     private Label windInFourDaysSecondCity;
     @FXML
@@ -177,6 +169,24 @@ public class GridPaneController {
         firstCityName.setText(gridPaneModel.getCityName());
         maxTempTodayFirstCity.setText(gridPaneModel.getMaxTempToday());
         minTempTodayFirstCity.setText(gridPaneModel.getMinTempToday());
-        precipitationTodayFirstCity.setText(gridPaneModel.getPrecipitationToday());
+        humidityTodayFirstCity.setText(gridPaneModel.getHumidityToday());
+        windTodayFirstCity.setText(gridPaneModel.getWindToday());
+        pressureTodayFirstCity.setText(gridPaneModel.getPressureToday());
+        tempTomorrowFirstCity.setText(gridPaneModel.getTemperatureForecast(1));
+        humidityTomorrowFirstCity.setText(gridPaneModel.getHumidityForecast(1));
+        windTomorrowFirstCity.setText(gridPaneModel.getWindForecast(1));
+        pressureTomorrowFirstCity.setText(gridPaneModel.getPressureForecast(1));
+        tempInTwoDaysFirstCity.setText(gridPaneModel.getTemperatureForecast(2));
+        humidityInTwoDaysFirstCity.setText(gridPaneModel.getHumidityForecast(2));
+        windInTwoDaysFirstCity.setText(gridPaneModel.getWindForecast(2));
+        pressureInTwoDaysFirstCity.setText(gridPaneModel.getPressureForecast(2));
+        tempInThreeDaysFirstCity.setText(gridPaneModel.getTemperatureForecast(3));
+        humidityInThreeDaysFirstCity.setText(gridPaneModel.getHumidityForecast(3));
+        windInThreeDaysFirstCity.setText(gridPaneModel.getWindForecast(3));
+        pressureInThreeDaysFirstCity.setText(gridPaneModel.getPressureForecast(3));
+        tempInFourDaysFirstCity.setText(gridPaneModel.getTemperatureForecast(4));
+        humidityInFourDaysFirstCity.setText(gridPaneModel.getHumidityForecast(4));
+        windInFourDaysFirstCity.setText(gridPaneModel.getWindForecast(4));
+        pressureInFourDaysFirstCity.setText(gridPaneModel.getPressureForecast(4));
     }
 }
