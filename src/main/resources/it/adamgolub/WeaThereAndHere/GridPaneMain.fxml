@@ -97,16 +97,21 @@
                            <children>
                               <ImageView fx:id="todayPrecipitationFirstCityImage" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../icons/precipitation.png" />
+                                    <Image url="@../icons/humidity.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="precipitationTodayFirstCity" text="rainy">
+                              <Label fx:id="humidityTodayFirstCity" text="rainy">
                                  <font>
                                     <Font name="Palatino Linotype Bold" size="15.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets left="5.0" />
                                  </HBox.margin>
+                              </Label>
+                              <Label text="\%">
+                                 <font>
+                                    <Font name="Palatino Linotype Bold" size="15.0" />
+                                 </font>
                               </Label>
                            </children>
                            <VBox.margin>
@@ -128,6 +133,11 @@
                                     <Insets left="5.0" />
                                  </HBox.margin>
                               </Label>
+                              <Label text=" m/s">
+                                 <font>
+                                    <Font name="Palatino Linotype Bold" size="15.0" />
+                                 </font>
+                              </Label>
                            </children>
                            <VBox.margin>
                               <Insets bottom="5.0" />
@@ -148,7 +158,7 @@
                                     <Insets left="5.0" />
                                  </HBox.margin>
                               </Label>
-                              <Label text="hPa">
+                              <Label text=" hPa">
                                  <font>
                                     <Font name="Palatino Linotype Bold" size="15.0" />
                                  </font>
@@ -239,10 +249,10 @@
                                  <children>
                                     <ImageView fx:id="todayPrecipitationSecondCityImage" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../icons/precipitation.png" />
+                                          <Image url="@../icons/humidity.png" />
                                        </image>
                                     </ImageView>
-                                    <Label fx:id="precipitationTodaySecondCity" text="rainy">
+                                    <Label fx:id="humidityTodaySecondCity" text="rainy">
                                        <font>
                                           <Font name="Palatino Linotype Bold" size="15.0" />
                                        </font>
@@ -329,25 +339,20 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label fx:id="maxTempTomorrowFirstCity" text="2">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="degreesUnits5" text="°C">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="minTempTomorrowFirstCity" text="0" textFill="GREY">
+                        <ImageView fitHeight="19.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/temperature.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="tempTomorrowFirstCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <HBox.margin>
-                              <Insets left="8.0" />
+                              <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="degreesUnits6" text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits5" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -358,14 +363,15 @@
                      <children>
                         <ImageView fx:id="tomorrowPrecipitationFirstCityImage" fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/precipitation.png" />
+                              <Image url="@../icons/humidity.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="precipitationTomorrowFirstCity" text="Label">
+                        <Label fx:id="humidityTomorrowFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text="\%" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="21.0" prefWidth="76.0">
@@ -380,6 +386,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" m/s" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
@@ -394,6 +401,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" hPa" />
                      </children>
                   </HBox>
                </children>
@@ -420,25 +428,20 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label fx:id="maxTempInTwoDaysFirstCity" text="2">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="degreesUnits7" text="°C">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="minTempInTwoDaysFirstCity" text="0" textFill="GREY">
+                        <ImageView fitHeight="19.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/temperature.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="tempInTwoDaysFirstCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <HBox.margin>
-                              <Insets left="8.0" />
+                              <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="degreesUnits8" text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits7" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -449,14 +452,15 @@
                      <children>
                         <ImageView fx:id="inTwoDaysPrecipitationFirstCityImage" fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/precipitation.png" />
+                              <Image url="@../icons/humidity.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="precipitationInTwoDaysFirstCity" text="Label">
+                        <Label fx:id="humidityInTwoDaysFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text="\%" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="21.0" prefWidth="76.0">
@@ -471,6 +475,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" m/s" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
@@ -485,6 +490,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" hPa" />
                      </children>
                   </HBox>
                </children>
@@ -511,25 +517,20 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label fx:id="maxTempInThreeDaysFirstCity" text="2">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="degreesUnits9" text="°C">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="minTempInThreeDaysFirstCity" text="0" textFill="GREY">
+                        <ImageView fitHeight="19.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/temperature.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="tempInThreeDaysFirstCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <HBox.margin>
-                              <Insets left="8.0" />
+                              <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="degreesUnits10" text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits9" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -540,14 +541,15 @@
                      <children>
                         <ImageView fx:id="inThreeDaysPrecipitationFirstCityImage" fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/precipitation.png" />
+                              <Image url="@../icons/humidity.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="precipitationInThreeDaysFirstCity" text="Label">
+                        <Label fx:id="humidityInThreeDaysFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text="\%" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="21.0" prefWidth="76.0">
@@ -562,6 +564,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" m/s" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
@@ -576,6 +579,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" hPa" />
                      </children>
                   </HBox>
                </children>
@@ -602,25 +606,20 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label fx:id="maxTempInFourDaysFirstCity" text="2">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="degreesUnits11" text="°C">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="minTempInFourDaysFirstCity" text="0" textFill="GREY">
+                        <ImageView fitHeight="19.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/temperature.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="tempInFourDaysFirstCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <HBox.margin>
-                              <Insets left="8.0" />
+                              <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="degreesUnits12" text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits11" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -631,14 +630,15 @@
                      <children>
                         <ImageView fx:id="inFourDaysPrecipitationFirstCityImage" fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/precipitation.png" />
+                              <Image url="@../icons/humidity.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="precipitationinFourDaysFirstCity" text="Label">
+                        <Label fx:id="humidityInFourDaysFirstCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text="\%" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="21.0" prefWidth="76.0">
@@ -653,6 +653,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" m/s" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
@@ -667,6 +668,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" hPa" />
                      </children>
                   </HBox>
                </children>
@@ -726,10 +728,10 @@
                      <children>
                         <ImageView fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/precipitation.png" />
+                              <Image url="@../icons/humidity.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="precipitationTomorrowSecondCity" text="Label">
+                        <Label fx:id="humidityTomorrowSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -817,10 +819,10 @@
                      <children>
                         <ImageView fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/precipitation.png" />
+                              <Image url="@../icons/humidity.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="precipitationInTwoDaysSecondCity" text="Label">
+                        <Label fx:id="humidityInTwoDaysSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -908,10 +910,10 @@
                      <children>
                         <ImageView fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/precipitation.png" />
+                              <Image url="@../icons/humidity.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="precipitationInThreeDaysSecondCity" text="Label">
+                        <Label fx:id="humidityInThreeDaysSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>
@@ -999,10 +1001,10 @@
                      <children>
                         <ImageView fitHeight="17.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/precipitation.png" />
+                              <Image url="@../icons/humidity.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="precipitationInFourDaysSecondCity" text="Label">
+                        <Label fx:id="humidityInFourDaysSecondCity" text="Label">
                            <HBox.margin>
                               <Insets left="3.0" />
                            </HBox.margin>

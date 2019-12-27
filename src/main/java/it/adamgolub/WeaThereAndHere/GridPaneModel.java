@@ -3,9 +3,12 @@ package it.adamgolub.WeaThereAndHere;
 import net.aksingh.owmjapis.api.APIException;
 import net.aksingh.owmjapis.core.OWM;
 import net.aksingh.owmjapis.model.CurrentWeather;
+import net.aksingh.owmjapis.model.HourlyWeatherForecast;
+import org.jetbrains.annotations.NotNull;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Objects;
 
 /**
  * Created by Adam on 26.12.2019.
@@ -18,44 +21,168 @@ public class GridPaneModel {
 
     }
 
-    public String getCityName() throws APIException {
+    @NotNull
+    private CurrentWeather initializeCurrentWeatherObject() throws APIException {
         owmFirstCity = new OWM(ConstantValues.API_KEY);
-        CurrentWeather cwdFirstCity = owmFirstCity.currentWeatherByCityName(ConstantValues.INITIAL_FIRST_CITY);
+        return owmFirstCity.currentWeatherByCityId(ConstantValues.INITIAL_FIRST_CITY);
+    }
+
+    public String getCityName() throws APIException {
+        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
         return cwdFirstCity.getCityName();
     }
 
     public String getMaxTempToday() throws APIException {
-        owmFirstCity = new OWM(ConstantValues.API_KEY);
-        CurrentWeather cwdFirstCity = owmFirstCity.currentWeatherByCityName(ConstantValues.INITIAL_FIRST_CITY);
+        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
 
-        Double tempInCelsiusDegrees = cwdFirstCity.getMainData().getTempMax() - 273;
+        double tempInCelsiusDegrees =
+                Objects.requireNonNull(cwdFirstCity.getMainData()).getTempMax() - ConstantValues.KELVIN_CELSIUS_COEFFICIENT;
         int tempInCelsiusDegreesAsInteger = (int) Math.round(tempInCelsiusDegrees);
-        String tempInCelsiusDegreesAsIntegerConvertedToString = String.valueOf(tempInCelsiusDegreesAsInteger);
 
-        return tempInCelsiusDegreesAsIntegerConvertedToString;
+        return String.valueOf(tempInCelsiusDegreesAsInteger);
     }
 
     public String getMinTempToday() throws APIException {
-        owmFirstCity = new OWM(ConstantValues.API_KEY);
-        CurrentWeather cwdFirstCity = owmFirstCity.currentWeatherByCityName(ConstantValues.INITIAL_FIRST_CITY);
+        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
 
-        Double tempInCelsiusDegrees = cwdFirstCity.getMainData().getTempMin() - 273;
+        double tempInCelsiusDegrees = Objects.requireNonNull(cwdFirstCity.getMainData()).getTempMin() - ConstantValues.KELVIN_CELSIUS_COEFFICIENT;
         int tempInCelsiusDegreesAsInteger = (int) Math.round(tempInCelsiusDegrees);
-        String tempInCelsiusDegreesAsIntegerConvertedToString = String.valueOf(tempInCelsiusDegreesAsInteger);
 
-        return tempInCelsiusDegreesAsIntegerConvertedToString;
+        return String.valueOf(tempInCelsiusDegreesAsInteger);
     }
 
-    public String getPrecipitationToday() throws APIException {
+    public String getHumidityToday() throws APIException {
+        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
+
+        Double humidity = Objects.requireNonNull(cwdFirstCity.getMainData()).getHumidity();
+        int humidityAsInteger = (int) Math.round(humidity);
+
+        return String.valueOf(humidityAsInteger);
+    }
+
+    public String getWindToday() throws APIException {
+        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
+
+        Double wind = Objects.requireNonNull(cwdFirstCity.getWindData()).getSpeed();
+
+        return String.valueOf(wind);
+    }
+
+    public String getPressureToday() throws APIException {
+        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
+
+        Double pressure = Objects.requireNonNull(cwdFirstCity.getMainData()).getPressure();
+        int pressureAsInteger = (int) Math.round(pressure);
+
+        return String.valueOf(pressureAsInteger);
+    }
+
+    @NotNull
+    private HourlyWeatherForecast initializeForecastWeatherObject() throws APIException {
         owmFirstCity = new OWM(ConstantValues.API_KEY);
-        CurrentWeather cwdFirstCity = owmFirstCity.currentWeatherByCityName(ConstantValues.INITIAL_FIRST_CITY);
-
-        //Double tempInCelsiusDegrees = cwdFirstCity.getRainData().component1();
-        //int tempInCelsiusDegreesAsInteger = (int) Math.round(tempInCelsiusDegrees);
-        //String tempInCelsiusDegreesAsIntegerConvertedToString = String.valueOf(tempInCelsiusDegreesAsInteger);
-
-        System.out.println(cwdFirstCity.getRainData().getPrecipVol3h());
-
-        return "la";
+        return owmFirstCity.hourlyWeatherForecastByCityId(ConstantValues.INITIAL_FIRST_CITY);
     }
+
+    @NotNull
+    private Date getTomorrowDateToForecast(int days) {
+        Date date = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        c.set(Calendar.HOUR_OF_DAY, 13);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.MILLISECOND, 0);
+        c.add(Calendar.DATE, days);
+        date = c.getTime();
+        return date;
+    }
+
+    public String getTemperatureForecast(int days) throws APIException {
+
+        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject();
+
+        Date date = getTomorrowDateToForecast(days);
+
+        double temperature;
+        String temperatureAsString = "";
+
+        for (int i = 0; i < 40; i++) {
+
+            if (Objects.equals(Objects.requireNonNull(cwdFirstCity.getDataList()).get(i).getDateTime(), date)) {
+                temperature = Objects.requireNonNull(cwdFirstCity.getDataList().get(i).getMainData()).getTemp() - ConstantValues.KELVIN_CELSIUS_COEFFICIENT;
+                int temperatureAsInteger = (int) Math.round(temperature);
+                temperatureAsString = String.valueOf(temperatureAsInteger);
+                break;
+            }
+        }
+
+        return temperatureAsString;
+    }
+
+    public String getHumidityForecast(int days) throws APIException {
+
+        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject();
+
+        Date date = getTomorrowDateToForecast(days);
+
+        double humidity;
+        String humidityAsString = "";
+
+        for (int i = 0; i < 40; i++) {
+
+            if (Objects.equals(Objects.requireNonNull(cwdFirstCity.getDataList()).get(i).getDateTime(), date)) {
+                humidity = Objects.requireNonNull(cwdFirstCity.getDataList().get(i).getMainData()).getHumidity();
+                int tempMaxAsInteger = (int) Math.round(humidity);
+                humidityAsString = String.valueOf(tempMaxAsInteger);
+                break;
+            }
+        }
+
+        return humidityAsString;
+    }
+
+    public String getWindForecast(int days) throws APIException {
+        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject();
+
+        Date date = getTomorrowDateToForecast(days);
+
+        double wind;
+        String windAsString;
+        String windAsStringWithDotAsSeparator = "";
+
+        for (int i = 0; i < 40; i++) {
+
+            if (Objects.equals(cwdFirstCity.getDataList().get(i).getDateTime(), date)) {
+                wind = Objects.requireNonNull(cwdFirstCity.getDataList().get(i).getWindData()).getSpeed();
+                windAsString = String.format("%.1f", wind);
+                windAsStringWithDotAsSeparator = windAsString.replace(',', '.');
+                break;
+            }
+        }
+
+        return windAsStringWithDotAsSeparator;
+    }
+
+    public String getPressureForecast(int days) throws APIException {
+        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject();
+
+        Date date = getTomorrowDateToForecast(days);
+
+        double pressure;
+        String pressureAsString = "";
+
+        for (int i = 0; i < 40; i++) {
+
+            if (Objects.equals(cwdFirstCity.getDataList().get(i).getDateTime(), date)) {
+                pressure = Objects.requireNonNull(cwdFirstCity.getDataList().get(i).getMainData()).getPressure();
+                int pressureAsInteger = (int) Math.round(pressure);
+                pressureAsString = String.valueOf(pressureAsInteger);
+                break;
+            }
+        }
+
+        return pressureAsString;
+    }
+
+
 }

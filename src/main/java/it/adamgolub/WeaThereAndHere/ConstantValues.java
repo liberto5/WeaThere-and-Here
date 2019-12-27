@@ -9,7 +9,8 @@ public class ConstantValues {
     //public static final Integer WEATHER_DATA_PER_DAY = 8;
     //public static final Integer UNIT_OF_Y_AXIS = 5;
     //public static final String JSON_FILE_WITH_CITIES = "/cities/city.list.min.json";
-    public static final String INITIAL_FIRST_CITY = "Warsaw";
+    public static final Integer INITIAL_FIRST_CITY = 6695624;
     public static final String INITIAL_SECOND_CITY = "Paris";
     //public static final int MILLISECONDS_IN_ONE_HOUR = 3600000;
+    public static final Integer KELVIN_CELSIUS_COEFFICIENT = 273;
 }
