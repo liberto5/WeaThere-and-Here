@@ -6,6 +6,7 @@ import net.aksingh.owmjapis.model.CurrentWeather;
 import net.aksingh.owmjapis.model.HourlyWeatherForecast;
 import org.jetbrains.annotations.NotNull;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
@@ -30,6 +31,17 @@ public class GridPaneModel {
     public String getCityName() throws APIException {
         CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
         return cwdFirstCity.getCityName();
+    }
+
+    public String getDateToday() {
+        Date day = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE, dd/MM/yyyy");
+        return sdf.format(day);
+    }
+
+    public String getIconTodayFirstCity() throws APIException {
+        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
+        return cwdFirstCity.getWeatherList().get(0).getIconCode();
     }
 
     public String getMaxTempToday() throws APIException {
@@ -84,7 +96,7 @@ public class GridPaneModel {
     }
 
     @NotNull
-    private Date getTomorrowDateToForecast(int days) {
+    private Date getDateToForecast(int days) {
         Date date = new Date();
         Calendar c = Calendar.getInstance();
         c.setTime(date);
@@ -97,11 +109,37 @@ public class GridPaneModel {
         return date;
     }
 
+    public String getDateForecast(int days) throws APIException {
+
+        Date day = getDateToForecast(days);
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+        return sdf.format(day);
+    }
+
+    public String getIconForecastFirstCity(int days) throws APIException {
+
+        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject();
+
+        Date date = getDateToForecast(days);
+
+        String iconCode = "";
+
+        for (int i = 0; i < 40; i++) {
+
+            if (Objects.equals(Objects.requireNonNull(cwdFirstCity.getDataList()).get(i).getDateTime(), date)) {
+                iconCode = cwdFirstCity.getDataList().get(i).getWeatherList().get(0).getIconCode();
+                break;
+            }
+        }
+
+        return iconCode;
+    }
+
     public String getTemperatureForecast(int days) throws APIException {
 
         HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject();
 
-        Date date = getTomorrowDateToForecast(days);
+        Date date = getDateToForecast(days);
 
         double temperature;
         String temperatureAsString = "";
@@ -123,7 +161,7 @@ public class GridPaneModel {
 
         HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject();
 
-        Date date = getTomorrowDateToForecast(days);
+        Date date = getDateToForecast(days);
 
         double humidity;
         String humidityAsString = "";
@@ -144,7 +182,7 @@ public class GridPaneModel {
     public String getWindForecast(int days) throws APIException {
         HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject();
 
-        Date date = getTomorrowDateToForecast(days);
+        Date date = getDateToForecast(days);
 
         double wind;
         String windAsString;
@@ -166,7 +204,7 @@ public class GridPaneModel {
     public String getPressureForecast(int days) throws APIException {
         HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject();
 
-        Date date = getTomorrowDateToForecast(days);
+        Date date = getDateToForecast(days);
 
         double pressure;
         String pressureAsString = "";
