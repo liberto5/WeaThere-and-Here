@@ -13,8 +13,8 @@
 
 <GridPane alignment="TOP_CENTER" prefHeight="407.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.adamgolub.WeaThereAndHere.GridPaneController">
    <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="299.0" minWidth="10.0" prefWidth="299.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.0" minWidth="10.0" prefWidth="308.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="350.0" prefWidth="350.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="350.0" prefWidth="350.0" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints maxHeight="268.0" minHeight="10.0" prefHeight="212.0" vgrow="SOMETIMES" />
@@ -48,14 +48,14 @@
                <children>
                   <VBox prefHeight="175.0" prefWidth="164.0">
                      <children>
-                        <ImageView fx:id="todayWeatherFirstCityImage" fitHeight="175.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="todayWeatherFirstCityImage" fitHeight="175.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/iconfinder_weather-01_1530392.png" />
+                              <Image url="@../icons/01d.png" />
                            </image>
                         </ImageView>
                      </children>
                   </VBox>
-                  <VBox prefHeight="134.0" prefWidth="141.0">
+                  <VBox prefHeight="175.0" prefWidth="175.0">
                      <children>
                         <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="141.0">
                            <children>
@@ -90,7 +90,7 @@
                               <Insets bottom="5.0" />
                            </VBox.margin>
                            <padding>
-                              <Insets bottom="-5.0" />
+                              <Insets bottom="-5.0" left="10.0" />
                            </padding>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="3.0" prefWidth="141.0">
@@ -117,6 +117,9 @@
                            <VBox.margin>
                               <Insets bottom="5.0" top="5.0" />
                            </VBox.margin>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="141.0">
                            <children>
@@ -142,6 +145,9 @@
                            <VBox.margin>
                               <Insets bottom="5.0" />
                            </VBox.margin>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
                         </HBox>
                         <HBox prefHeight="26.0" prefWidth="141.0">
                            <children>
@@ -164,6 +170,9 @@
                                  </font>
                               </Label>
                            </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
                         </HBox>
                      </children>
                   </VBox>
@@ -187,7 +196,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="27.0" prefWidth="304.0">
                <children>
-                  <Label fx:id="todayDateinSecondCity" contentDisplay="CENTER" text="Wednesday, 18/12/2019">
+                  <Label fx:id="todayDateInSecondCity" contentDisplay="CENTER" text="Wednesday, 18/12/2019">
                      <font>
                         <Font name="Palatino Linotype" size="17.0" />
                      </font>
@@ -200,7 +209,7 @@
                      <children>
                         <VBox prefHeight="175.0" prefWidth="164.0">
                            <children>
-                              <ImageView fx:id="todayWeatherSecondCityImage" fitHeight="175.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="todayWeatherSecondCityImage" fitHeight="173.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/iconfinder_weather-08_1530385.png" />
                                  </image>
@@ -242,7 +251,7 @@
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
                                  <padding>
-                                    <Insets bottom="-5.0" />
+                                    <Insets bottom="-5.0" left="10.0" />
                                  </padding>
                               </HBox>
                               <HBox alignment="CENTER_LEFT" prefHeight="3.0" prefWidth="141.0">
@@ -260,10 +269,18 @@
                                           <Insets left="5.0" />
                                        </HBox.margin>
                                     </Label>
+                                    <Label text="\%">
+                                       <font>
+                                          <Font name="Palatino Linotype Bold" size="15.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="5.0" top="5.0" />
                                  </VBox.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
                               </HBox>
                               <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="141.0">
                                  <children>
@@ -280,10 +297,18 @@
                                           <Insets left="5.0" />
                                        </HBox.margin>
                                     </Label>
+                                    <Label text=" m/s">
+                                       <font>
+                                          <Font name="Palatino Linotype Bold" size="15.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="5.0" />
                                  </VBox.margin>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
                               </HBox>
                               <HBox prefHeight="26.0" prefWidth="141.0">
                                  <children>
@@ -300,12 +325,15 @@
                                           <Insets left="5.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <Label text="hPa">
+                                    <Label text=" hPa">
                                        <font>
                                           <Font name="Palatino Linotype Bold" size="15.0" />
                                        </font>
                                     </Label>
                                  </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
                               </HBox>
                            </children>
                         </VBox>
@@ -321,7 +349,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="29.0" prefWidth="76.0">
                      <children>
-                        <Label fx:id="tomorrowDateInFirstCity" alignment="CENTER" text="Thursday">
+                        <Label fx:id="tomorrowDateInFirstCity" alignment="CENTER" prefHeight="18.0" prefWidth="116.0" text="Thursday">
                            <font>
                               <Font name="Palatino Linotype Bold" size="14.0" />
                            </font>
@@ -410,7 +438,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="29.0" prefWidth="76.0">
                      <children>
-                        <Label fx:id="inTwoDaysDateInFirstCity" alignment="CENTER" text="Friday">
+                        <Label fx:id="inTwoDaysDateInFirstCity" alignment="CENTER" prefHeight="18.0" prefWidth="124.0" text="Friday">
                            <font>
                               <Font name="Palatino Linotype Bold" size="14.0" />
                            </font>
@@ -499,7 +527,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="29.0" prefWidth="76.0">
                      <children>
-                        <Label fx:id="inThreeDaysDateInFirstCity" alignment="CENTER" text="Saturday">
+                        <Label fx:id="inThreeDaysDateInFirstCity" alignment="CENTER" prefHeight="18.0" prefWidth="142.0" text="Saturday">
                            <font>
                               <Font name="Palatino Linotype Bold" size="14.0" />
                            </font>
@@ -588,7 +616,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="29.0" prefWidth="76.0">
                      <children>
-                        <Label fx:id="inFourDaysDateInFirstCity" alignment="CENTER" text="Sunday">
+                        <Label fx:id="inFourDaysDateInFirstCity" alignment="CENTER" prefHeight="18.0" prefWidth="142.0" text="Sunday">
                            <font>
                               <Font name="Palatino Linotype Bold" size="14.0" />
                            </font>
@@ -699,25 +727,20 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label fx:id="maxTempTomorrowSecondCity" text="2">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="degreesUnits13" text="°C">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="minTempTomorrowSecondCity" text="0" textFill="GREY">
+                        <ImageView fitHeight="19.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/temperature.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="tempTomorrowSecondCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <HBox.margin>
-                              <Insets left="8.0" />
+                              <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="degreesUnits14" text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits13" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -736,6 +759,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text="\%" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="21.0" prefWidth="76.0">
@@ -750,6 +774,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" m/s" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
@@ -764,6 +789,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" hPa" />
                      </children>
                   </HBox>
                </children>
@@ -790,25 +816,20 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label fx:id="maxTempInTwoDaysSecondCity" text="2">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="degreesUnits15" text="°C">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="minTempInTwoDaysSecondCity" text="0" textFill="GREY">
+                        <ImageView fitHeight="19.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/temperature.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="tempInTwoDaysSecondCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <HBox.margin>
-                              <Insets left="8.0" />
+                              <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="degreesUnits16" text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits15" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -827,6 +848,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text="\%" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="21.0" prefWidth="76.0">
@@ -841,6 +863,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" m/s" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
@@ -855,6 +878,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" hPa" />
                      </children>
                   </HBox>
                </children>
@@ -881,25 +905,20 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label fx:id="maxTempInThreeDaysSecondCity" text="2">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="degreesUnits17" text="°C">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="minTempInThreeDaysSecondCity" text="0" textFill="GREY">
+                        <ImageView fitHeight="19.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/temperature.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="tempInThreeDaysSecondCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <HBox.margin>
-                              <Insets left="8.0" />
+                              <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="degreesUnits18" text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits17" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -918,6 +937,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text="\%" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="21.0" prefWidth="76.0">
@@ -932,6 +952,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" m/s" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
@@ -946,6 +967,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" hPa" />
                      </children>
                   </HBox>
                </children>
@@ -972,25 +994,20 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
                      <children>
-                        <Label fx:id="maxTempInFourDaysSecondCity" text="2">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="degreesUnits19" text="°C">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="minTempInFourDaysSecondCity" text="0" textFill="GREY">
+                        <ImageView fitHeight="19.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/temperature.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="tempInFourDaysSecondCity" text="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <HBox.margin>
-                              <Insets left="8.0" />
+                              <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="degreesUnits20" text="°C" textFill="GREY">
+                        <Label fx:id="degreesUnits19" text="°C">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -1009,6 +1026,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text="\%" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="21.0" prefWidth="76.0">
@@ -1023,6 +1041,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" m/s" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="20.0" prefWidth="76.0">
@@ -1037,6 +1056,7 @@
                               <Insets left="3.0" />
                            </HBox.margin>
                         </Label>
+                        <Label text=" hPa" />
                      </children>
                   </HBox>
                </children>
