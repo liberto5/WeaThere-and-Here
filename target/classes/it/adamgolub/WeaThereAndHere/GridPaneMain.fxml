@@ -1072,7 +1072,7 @@
                   <Font name="Palatino Linotype" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="searchingFirstCityName" alignment="BOTTOM_LEFT" focusTraversable="false" style="-fx-background-color: #f1ffcc; -fx-border-color: #b5b5b5; -fx-border-radius: 4;" />
+            <TextField fx:id="searchingFirstCityName" style="-fx-background-color: #f1ffcc; -fx-border-color: #b5b5b5; -fx-border-radius: 4;" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -1082,7 +1082,7 @@
                   <Font name="Palatino Linotype" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="searchingSecondCityName" alignment="BOTTOM_LEFT" focusTraversable="false" style="-fx-background-color: #f1ffcc; -fx-border-color: #b5b5b5; -fx-border-radius: 4;" />
+            <TextField fx:id="searchingSecondCityName" style="-fx-background-color: #f1ffcc; -fx-border-color: #b5b5b5; -fx-border-radius: 4;" />
          </children>
       </HBox>
    </children>

@@ -1,26 +1,15 @@
 package it.adamgolub.WeaThereAndHere;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.stream.JsonReader;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import net.aksingh.owmjapis.api.APIException;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
+
 import java.util.Map;
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import net.aksingh.owmjapis.model.param.City;
-
 import java.util.Objects;
-import java.util.TreeMap;
 
 /**
  * Created by Adam on 23.12.2019.
@@ -184,29 +173,18 @@ public class GridPaneController {
         //System.out.println("Jestem kontrolerem");
     }
 
+    private Map<String, Integer> citiesMap;
+
     @FXML
     void initialize () throws APIException {
 
-      /*  try {
-            Map<String, Integer> citiesMap =
-                    new TreeMap<>();
-
-            JsonReader reader = new JsonReader(new InputStreamReader(getClass().getResourceAsStream("src/main" +
-                            "/resources/it/adamgolub/cityList/city.list.min.json")));
-            Gson gson = new GsonBuilder().create();
-            City[] cities = gson.fromJson(reader, City[].class);
-
-            for (City city : cities) {
-                citiesMap.put(City.name);
-            }
-
-
-        } catch (NullPointerException | JsonSyntaxException e) {
-            //throw new FileNotFoundException();
-        }*/
-
-
-
+        try {
+            JSONConverter jsonConverter = new JSONConverter();
+            citiesMap = jsonConverter.getCitiesMapFromJSON(ConstantValues.JSON_FILE_WITH_CITIES);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
 
 
 
@@ -417,5 +395,7 @@ public class GridPaneController {
         return path;
 
     }
+
+
 
 }
