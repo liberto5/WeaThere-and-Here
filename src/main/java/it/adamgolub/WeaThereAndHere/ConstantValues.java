@@ -6,7 +6,7 @@ package it.adamgolub.WeaThereAndHere;
 public class ConstantValues {
 
     public static final String API_KEY = "40089bcd3a7da1d179139e9ed0126510";
-    //public static final String JSON_FILE_WITH_CITIES = "/cities/city.list.min.json";
+    public static final String JSON_FILE_WITH_CITIES = "city.list.min.json";
     public static final Integer INITIAL_FIRST_CITY = 6695624;
     public static final Integer INITIAL_SECOND_CITY = 6455259;
     //public static final int MILLISECONDS_IN_ONE_HOUR = 3600000;
