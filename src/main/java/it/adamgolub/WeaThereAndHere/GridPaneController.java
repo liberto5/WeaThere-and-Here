@@ -1,16 +1,45 @@
 package it.adamgolub.WeaThereAndHere;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.stream.JsonReader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import net.aksingh.owmjapis.api.APIException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+import java.util.Map;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import net.aksingh.owmjapis.model.param.City;
+
+import java.util.Objects;
+import java.util.TreeMap;
 
 /**
  * Created by Adam on 23.12.2019.
  */
 public class GridPaneController {
 
+    private static Integer firstCityId;
+    private static Integer secondCityId;
+
+    public static void setFirstCityId(Integer firstCityId) {
+        GridPaneController.firstCityId = firstCityId;
+    }
+
+    public static void setSecondCityId(Integer secondCityId) {
+        GridPaneController.secondCityId = secondCityId;
+    }
+
+    @FXML
+    private TextField searchingFirstCityName;
     @FXML
     private Label firstCityName;
     @FXML
@@ -80,6 +109,8 @@ public class GridPaneController {
     @FXML
     private Label pressureInFourDaysFirstCity;
 
+    @FXML
+    private TextField searchingSecondCityName;
     @FXML
     private Label secondCityName;
     @FXML
@@ -155,145 +186,185 @@ public class GridPaneController {
 
     @FXML
     void initialize () throws APIException {
+
+      /*  try {
+            Map<String, Integer> citiesMap =
+                    new TreeMap<>();
+
+            JsonReader reader = new JsonReader(new InputStreamReader(getClass().getResourceAsStream("src/main" +
+                            "/resources/it/adamgolub/cityList/city.list.min.json")));
+            Gson gson = new GsonBuilder().create();
+            City[] cities = gson.fromJson(reader, City[].class);
+
+            for (City city : cities) {
+                citiesMap.put(City.name);
+            }
+
+
+        } catch (NullPointerException | JsonSyntaxException e) {
+            //throw new FileNotFoundException();
+        }*/
+
+
+
+
+
+
+
+
         GridPaneModel gridPaneModel = new GridPaneModel();
 
-        firstCityName.setText(gridPaneModel.getCityName());
+        getWeatherFirstCity(gridPaneModel);
 
-        getTodayWeatherFirstCity(gridPaneModel);
-        getTomorrowWeatherFirstCity(gridPaneModel);
-        getWeatherInTwoDaysFirstCity(gridPaneModel);
-        getWeatherInThreeDaysFirstCity(gridPaneModel);
-        getWeatherInFourDaysFirstCity(gridPaneModel);
-
-        secondCityName.setText(gridPaneModel.getCityName());
-
-        getTodayWeatherSecondCity(gridPaneModel);
-        getTomorrowWeatherSecondCity(gridPaneModel);
-        getWeatherInTwoDaysSecondCity(gridPaneModel);
-        getWeatherInThreeDaysSecondCity(gridPaneModel);
-        getWeatherInFourDaysSecondCity(gridPaneModel);
+        getWeatherSecondCity(gridPaneModel);
     }
 
-    private void getTodayWeatherFirstCity(GridPaneModel gridPaneModel) throws APIException {
+    private void getWeatherFirstCity(GridPaneModel gridPaneModel) throws APIException {
+        int cityId;
+        cityId = Objects.requireNonNullElse(firstCityId, ConstantValues.INITIAL_FIRST_CITY);
+
+        firstCityName.setText(gridPaneModel.getCityName(cityId));
+
+        getTodayWeatherFirstCity(gridPaneModel, cityId);
+        getTomorrowWeatherFirstCity(gridPaneModel, cityId);
+        getWeatherInTwoDaysFirstCity(gridPaneModel, cityId);
+        getWeatherInThreeDaysFirstCity(gridPaneModel, cityId);
+        getWeatherInFourDaysFirstCity(gridPaneModel, cityId);
+    }
+
+    private void getTodayWeatherFirstCity(GridPaneModel gridPaneModel, int cityId) throws APIException {
         todayDateInFirstCity.setText(gridPaneModel.getDateToday());
-        String icon = gridPaneModel.getIconTodayFirstCity();
+        String icon = gridPaneModel.getIconTodayFirstCity(cityId);
         String path = setWeatherIconSymbol(icon);
         Image img = new Image("file:" + path);
         todayWeatherFirstCityImage.setImage(img);
-        maxTempTodayFirstCity.setText(gridPaneModel.getMaxTempToday());
-        minTempTodayFirstCity.setText(gridPaneModel.getMinTempToday());
-        humidityTodayFirstCity.setText(gridPaneModel.getHumidityToday());
-        windTodayFirstCity.setText(gridPaneModel.getWindToday());
-        pressureTodayFirstCity.setText(gridPaneModel.getPressureToday());
+        maxTempTodayFirstCity.setText(gridPaneModel.getMaxTempToday(cityId));
+        minTempTodayFirstCity.setText(gridPaneModel.getMinTempToday(cityId));
+        humidityTodayFirstCity.setText(gridPaneModel.getHumidityToday(cityId));
+        windTodayFirstCity.setText(gridPaneModel.getWindToday(cityId));
+        pressureTodayFirstCity.setText(gridPaneModel.getPressureToday(cityId));
     }
 
-    private void getTomorrowWeatherFirstCity(GridPaneModel gridPaneModel) throws APIException {
+    private void getTomorrowWeatherFirstCity(GridPaneModel gridPaneModel, int cityId) throws APIException {
         tomorrowDateInFirstCity.setText(gridPaneModel.getDateForecast(1));
-        String icon = gridPaneModel.getIconForecastFirstCity(1);
+        String icon = gridPaneModel.getIconForecastFirstCity(1, cityId);
         String path = setWeatherIconSymbol(icon);
         Image img = new Image("file:" + path);
         tomorrowWeatherFirstCityImage.setImage(img);
-        tempTomorrowFirstCity.setText(gridPaneModel.getTemperatureForecast(1));
-        humidityTomorrowFirstCity.setText(gridPaneModel.getHumidityForecast(1));
-        windTomorrowFirstCity.setText(gridPaneModel.getWindForecast(1));
-        pressureTomorrowFirstCity.setText(gridPaneModel.getPressureForecast(1));
+        tempTomorrowFirstCity.setText(gridPaneModel.getTemperatureForecast(1, cityId));
+        humidityTomorrowFirstCity.setText(gridPaneModel.getHumidityForecast(1, cityId));
+        windTomorrowFirstCity.setText(gridPaneModel.getWindForecast(1, cityId));
+        pressureTomorrowFirstCity.setText(gridPaneModel.getPressureForecast(1, cityId));
     }
 
-    private void getWeatherInTwoDaysFirstCity(GridPaneModel gridPaneModel) throws APIException {
+    private void getWeatherInTwoDaysFirstCity(GridPaneModel gridPaneModel, int cityId) throws APIException {
         inTwoDaysDateInFirstCity.setText(gridPaneModel.getDateForecast(2));
-        String icon = gridPaneModel.getIconForecastFirstCity(2);
+        String icon = gridPaneModel.getIconForecastFirstCity(2, cityId);
         String path = setWeatherIconSymbol(icon);
         Image img = new Image("file:" + path);
         inTwoDaysWeatherFirstCityImage.setImage(img);
-        tempInTwoDaysFirstCity.setText(gridPaneModel.getTemperatureForecast(2));
-        humidityInTwoDaysFirstCity.setText(gridPaneModel.getHumidityForecast(2));
-        windInTwoDaysFirstCity.setText(gridPaneModel.getWindForecast(2));
-        pressureInTwoDaysFirstCity.setText(gridPaneModel.getPressureForecast(2));
+        tempInTwoDaysFirstCity.setText(gridPaneModel.getTemperatureForecast(2, cityId));
+        humidityInTwoDaysFirstCity.setText(gridPaneModel.getHumidityForecast(2, cityId));
+        windInTwoDaysFirstCity.setText(gridPaneModel.getWindForecast(2, cityId));
+        pressureInTwoDaysFirstCity.setText(gridPaneModel.getPressureForecast(2, cityId));
     }
 
-    private void getWeatherInThreeDaysFirstCity(GridPaneModel gridPaneModel) throws APIException {
+    private void getWeatherInThreeDaysFirstCity(GridPaneModel gridPaneModel, int cityId) throws APIException {
         inThreeDaysDateInFirstCity.setText(gridPaneModel.getDateForecast(3));
-        String icon = gridPaneModel.getIconForecastFirstCity(3);
+        String icon = gridPaneModel.getIconForecastFirstCity(3, cityId);
         String path = setWeatherIconSymbol(icon);
         Image img = new Image("file:" + path);
         inThreeDaysWeatherFirstCityImage.setImage(img);
-        tempInThreeDaysFirstCity.setText(gridPaneModel.getTemperatureForecast(3));
-        humidityInThreeDaysFirstCity.setText(gridPaneModel.getHumidityForecast(3));
-        windInThreeDaysFirstCity.setText(gridPaneModel.getWindForecast(3));
-        pressureInThreeDaysFirstCity.setText(gridPaneModel.getPressureForecast(3));
+        tempInThreeDaysFirstCity.setText(gridPaneModel.getTemperatureForecast(3, cityId));
+        humidityInThreeDaysFirstCity.setText(gridPaneModel.getHumidityForecast(3, cityId));
+        windInThreeDaysFirstCity.setText(gridPaneModel.getWindForecast(3, cityId));
+        pressureInThreeDaysFirstCity.setText(gridPaneModel.getPressureForecast(3, cityId));
     }
 
-    private void getWeatherInFourDaysFirstCity(GridPaneModel gridPaneModel) throws APIException {
+    private void getWeatherInFourDaysFirstCity(GridPaneModel gridPaneModel, int cityId) throws APIException {
         inFourDaysDateInFirstCity.setText(gridPaneModel.getDateForecast(4));
-        String icon = gridPaneModel.getIconForecastFirstCity(4);
+        String icon = gridPaneModel.getIconForecastFirstCity(4, cityId);
         String path = setWeatherIconSymbol(icon);
         Image img = new Image("file:" + path);
         inFourDaysWeatherFirstCityImage.setImage(img);
-        tempInFourDaysFirstCity.setText(gridPaneModel.getTemperatureForecast(4));
-        humidityInFourDaysFirstCity.setText(gridPaneModel.getHumidityForecast(4));
-        windInFourDaysFirstCity.setText(gridPaneModel.getWindForecast(4));
-        pressureInFourDaysFirstCity.setText(gridPaneModel.getPressureForecast(4));
+        tempInFourDaysFirstCity.setText(gridPaneModel.getTemperatureForecast(4, cityId));
+        humidityInFourDaysFirstCity.setText(gridPaneModel.getHumidityForecast(4, cityId));
+        windInFourDaysFirstCity.setText(gridPaneModel.getWindForecast(4, cityId));
+        pressureInFourDaysFirstCity.setText(gridPaneModel.getPressureForecast(4, cityId));
     }
 
-    private void getTodayWeatherSecondCity(GridPaneModel gridPaneModel) throws APIException {
+    private void getWeatherSecondCity(GridPaneModel gridPaneModel) throws APIException {
+        int cityId;
+        cityId = Objects.requireNonNullElse(secondCityId, ConstantValues.INITIAL_SECOND_CITY);
+
+        secondCityName.setText(gridPaneModel.getCityName(cityId));
+
+        getTodayWeatherSecondCity(gridPaneModel, cityId);
+        getTomorrowWeatherSecondCity(gridPaneModel, cityId);
+        getWeatherInTwoDaysSecondCity(gridPaneModel, cityId);
+        getWeatherInThreeDaysSecondCity(gridPaneModel, cityId);
+        getWeatherInFourDaysSecondCity(gridPaneModel, cityId);
+    }
+
+    private void getTodayWeatherSecondCity(GridPaneModel gridPaneModel, int cityId) throws APIException {
         todayDateInSecondCity.setText(gridPaneModel.getDateToday());
-        String icon = gridPaneModel.getIconTodayFirstCity();
+        String icon = gridPaneModel.getIconTodayFirstCity(cityId);
         String path = setWeatherIconSymbol(icon);
         Image img = new Image("file:" + path);
         todayWeatherSecondCityImage.setImage(img);
-        maxTempTodaySecondCity.setText(gridPaneModel.getMaxTempToday());
-        minTempTodaySecondCity.setText(gridPaneModel.getMinTempToday());
-        humidityTodaySecondCity.setText(gridPaneModel.getHumidityToday());
-        windTodaySecondCity.setText(gridPaneModel.getWindToday());
-        pressureTodaySecondCity.setText(gridPaneModel.getPressureToday());
+        maxTempTodaySecondCity.setText(gridPaneModel.getMaxTempToday(cityId));
+        minTempTodaySecondCity.setText(gridPaneModel.getMinTempToday(cityId));
+        humidityTodaySecondCity.setText(gridPaneModel.getHumidityToday(cityId));
+        windTodaySecondCity.setText(gridPaneModel.getWindToday(cityId));
+        pressureTodaySecondCity.setText(gridPaneModel.getPressureToday(cityId));
     }
 
-    private void getTomorrowWeatherSecondCity(GridPaneModel gridPaneModel) throws APIException {
+    private void getTomorrowWeatherSecondCity(GridPaneModel gridPaneModel, int cityId) throws APIException {
         tomorrowDateInSecondCity.setText(gridPaneModel.getDateForecast(1));
-        String icon = gridPaneModel.getIconForecastFirstCity(1);
+        String icon = gridPaneModel.getIconForecastFirstCity(1, cityId);
         String path = setWeatherIconSymbol(icon);
         Image img = new Image("file:" + path);
         tomorrowWeatherSecondCityImage.setImage(img);
-        tempTomorrowSecondCity.setText(gridPaneModel.getTemperatureForecast(1));
-        humidityTomorrowSecondCity.setText(gridPaneModel.getHumidityForecast(1));
-        windTomorrowSecondCity.setText(gridPaneModel.getWindForecast(1));
-        pressureTomorrowSecondCity.setText(gridPaneModel.getPressureForecast(1));
+        tempTomorrowSecondCity.setText(gridPaneModel.getTemperatureForecast(1, cityId));
+        humidityTomorrowSecondCity.setText(gridPaneModel.getHumidityForecast(1, cityId));
+        windTomorrowSecondCity.setText(gridPaneModel.getWindForecast(1, cityId));
+        pressureTomorrowSecondCity.setText(gridPaneModel.getPressureForecast(1, cityId));
     }
 
-    private void getWeatherInTwoDaysSecondCity(GridPaneModel gridPaneModel) throws APIException {
+    private void getWeatherInTwoDaysSecondCity(GridPaneModel gridPaneModel, int cityId) throws APIException {
         inTwoDaysDateInSecondCity.setText(gridPaneModel.getDateForecast(2));
-        String icon = gridPaneModel.getIconForecastFirstCity(2);
+        String icon = gridPaneModel.getIconForecastFirstCity(2, cityId);
         String path = setWeatherIconSymbol(icon);
         Image img = new Image("file:" + path);
         inTwoDaysWeatherSecondCityImage.setImage(img);
-        tempInTwoDaysSecondCity.setText(gridPaneModel.getTemperatureForecast(2));
-        humidityInTwoDaysSecondCity.setText(gridPaneModel.getHumidityForecast(2));
-        windInTwoDaysSecondCity.setText(gridPaneModel.getWindForecast(2));
-        pressureInTwoDaysSecondCity.setText(gridPaneModel.getPressureForecast(2));
+        tempInTwoDaysSecondCity.setText(gridPaneModel.getTemperatureForecast(2, cityId));
+        humidityInTwoDaysSecondCity.setText(gridPaneModel.getHumidityForecast(2, cityId));
+        windInTwoDaysSecondCity.setText(gridPaneModel.getWindForecast(2, cityId));
+        pressureInTwoDaysSecondCity.setText(gridPaneModel.getPressureForecast(2, cityId));
     }
 
-    private void getWeatherInThreeDaysSecondCity(GridPaneModel gridPaneModel) throws APIException {
+    private void getWeatherInThreeDaysSecondCity(GridPaneModel gridPaneModel, int cityId) throws APIException {
         inThreeDaysDateInSecondCity.setText(gridPaneModel.getDateForecast(3));
-        String icon = gridPaneModel.getIconForecastFirstCity(3);
+        String icon = gridPaneModel.getIconForecastFirstCity(3, cityId);
         String path = setWeatherIconSymbol(icon);
         Image img = new Image("file:" + path);
         inThreeDaysWeatherSecondCityImage.setImage(img);
-        tempInThreeDaysSecondCity.setText(gridPaneModel.getTemperatureForecast(3));
-        humidityInThreeDaysSecondCity.setText(gridPaneModel.getHumidityForecast(3));
-        windInThreeDaysSecondCity.setText(gridPaneModel.getWindForecast(3));
-        pressureInThreeDaysSecondCity.setText(gridPaneModel.getPressureForecast(3));
+        tempInThreeDaysSecondCity.setText(gridPaneModel.getTemperatureForecast(3, cityId));
+        humidityInThreeDaysSecondCity.setText(gridPaneModel.getHumidityForecast(3, cityId));
+        windInThreeDaysSecondCity.setText(gridPaneModel.getWindForecast(3, cityId));
+        pressureInThreeDaysSecondCity.setText(gridPaneModel.getPressureForecast(3, cityId));
     }
 
-    private void getWeatherInFourDaysSecondCity(GridPaneModel gridPaneModel) throws APIException {
+    private void getWeatherInFourDaysSecondCity(GridPaneModel gridPaneModel, int cityId) throws APIException {
         inFourDaysDateInSecondCity.setText(gridPaneModel.getDateForecast(4));
-        String icon = gridPaneModel.getIconForecastFirstCity(4);
+        String icon = gridPaneModel.getIconForecastFirstCity(4, cityId);
         String path = setWeatherIconSymbol(icon);
         Image img = new Image("file:" + path);
         inFourDaysWeatherSecondCityImage.setImage(img);
-        tempInFourDaysSecondCity.setText(gridPaneModel.getTemperatureForecast(4));
-        humidityInFourDaysSecondCity.setText(gridPaneModel.getHumidityForecast(4));
-        windInFourDaysSecondCity.setText(gridPaneModel.getWindForecast(4));
-        pressureInFourDaysSecondCity.setText(gridPaneModel.getPressureForecast(4));
+        tempInFourDaysSecondCity.setText(gridPaneModel.getTemperatureForecast(4, cityId));
+        humidityInFourDaysSecondCity.setText(gridPaneModel.getHumidityForecast(4, cityId));
+        windInFourDaysSecondCity.setText(gridPaneModel.getWindForecast(4, cityId));
+        pressureInFourDaysSecondCity.setText(gridPaneModel.getPressureForecast(4, cityId));
     }
 
     private String setWeatherIconSymbol(String icon) {

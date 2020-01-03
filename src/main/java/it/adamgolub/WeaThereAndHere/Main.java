@@ -21,6 +21,9 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("GridPaneMain"));
+
+        scene.getStylesheets().add("it/adamgolub/css/style.css");
+
         stage.setScene(scene);
         //OWM owm = new OWM("40089bcd3a7da1d179139e9ed0126510");
         stage.show();

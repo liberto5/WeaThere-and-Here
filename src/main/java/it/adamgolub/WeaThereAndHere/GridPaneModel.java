@@ -7,9 +7,7 @@ import net.aksingh.owmjapis.model.HourlyWeatherForecast;
 import org.jetbrains.annotations.NotNull;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Created by Adam on 26.12.2019.
@@ -23,13 +21,13 @@ public class GridPaneModel {
     }
 
     @NotNull
-    private CurrentWeather initializeCurrentWeatherObject() throws APIException {
+    private CurrentWeather initializeCurrentWeatherObject(int cityId) throws APIException {
         owmFirstCity = new OWM(ConstantValues.API_KEY);
-        return owmFirstCity.currentWeatherByCityId(ConstantValues.INITIAL_FIRST_CITY);
+        return owmFirstCity.currentWeatherByCityId(cityId);
     }
 
-    public String getCityName() throws APIException {
-        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
+    public String getCityName(int cityId) throws APIException {
+        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject(cityId);
         return cwdFirstCity.getCityName();
     }
 
@@ -39,13 +37,13 @@ public class GridPaneModel {
         return sdf.format(day);
     }
 
-    public String getIconTodayFirstCity() throws APIException {
-        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
+    public String getIconTodayFirstCity(int cityId) throws APIException {
+        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject(cityId);
         return cwdFirstCity.getWeatherList().get(0).getIconCode();
     }
 
-    public String getMaxTempToday() throws APIException {
-        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
+    public String getMaxTempToday(int cityId) throws APIException {
+        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject(cityId);
 
         double tempInCelsiusDegrees =
                 Objects.requireNonNull(cwdFirstCity.getMainData()).getTempMax() - ConstantValues.KELVIN_CELSIUS_COEFFICIENT;
@@ -54,8 +52,8 @@ public class GridPaneModel {
         return String.valueOf(tempInCelsiusDegreesAsInteger);
     }
 
-    public String getMinTempToday() throws APIException {
-        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
+    public String getMinTempToday(int cityId) throws APIException {
+        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject(cityId);
 
         double tempInCelsiusDegrees = Objects.requireNonNull(cwdFirstCity.getMainData()).getTempMin() - ConstantValues.KELVIN_CELSIUS_COEFFICIENT;
         int tempInCelsiusDegreesAsInteger = (int) Math.round(tempInCelsiusDegrees);
@@ -63,8 +61,8 @@ public class GridPaneModel {
         return String.valueOf(tempInCelsiusDegreesAsInteger);
     }
 
-    public String getHumidityToday() throws APIException {
-        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
+    public String getHumidityToday(int cityId) throws APIException {
+        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject(cityId);
 
         Double humidity = Objects.requireNonNull(cwdFirstCity.getMainData()).getHumidity();
         int humidityAsInteger = (int) Math.round(humidity);
@@ -72,16 +70,16 @@ public class GridPaneModel {
         return String.valueOf(humidityAsInteger);
     }
 
-    public String getWindToday() throws APIException {
-        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
+    public String getWindToday(int cityId) throws APIException {
+        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject(cityId);
 
         Double wind = Objects.requireNonNull(cwdFirstCity.getWindData()).getSpeed();
 
         return String.valueOf(wind);
     }
 
-    public String getPressureToday() throws APIException {
-        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject();
+    public String getPressureToday(int cityId) throws APIException {
+        CurrentWeather cwdFirstCity = initializeCurrentWeatherObject(cityId);
 
         Double pressure = Objects.requireNonNull(cwdFirstCity.getMainData()).getPressure();
         int pressureAsInteger = (int) Math.round(pressure);
@@ -90,9 +88,9 @@ public class GridPaneModel {
     }
 
     @NotNull
-    private HourlyWeatherForecast initializeForecastWeatherObject() throws APIException {
+    private HourlyWeatherForecast initializeForecastWeatherObject(int cityId) throws APIException {
         owmFirstCity = new OWM(ConstantValues.API_KEY);
-        return owmFirstCity.hourlyWeatherForecastByCityId(ConstantValues.INITIAL_FIRST_CITY);
+        return owmFirstCity.hourlyWeatherForecastByCityId(cityId);
     }
 
     @NotNull
@@ -116,9 +114,9 @@ public class GridPaneModel {
         return sdf.format(day);
     }
 
-    public String getIconForecastFirstCity(int days) throws APIException {
+    public String getIconForecastFirstCity(int days, int cityId) throws APIException {
 
-        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject();
+        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject(cityId);
 
         Date date = getDateToForecast(days);
 
@@ -135,9 +133,9 @@ public class GridPaneModel {
         return iconCode;
     }
 
-    public String getTemperatureForecast(int days) throws APIException {
+    public String getTemperatureForecast(int days, int cityId) throws APIException {
 
-        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject();
+        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject(cityId);
 
         Date date = getDateToForecast(days);
 
@@ -157,9 +155,9 @@ public class GridPaneModel {
         return temperatureAsString;
     }
 
-    public String getHumidityForecast(int days) throws APIException {
+    public String getHumidityForecast(int days, int cityId) throws APIException {
 
-        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject();
+        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject(cityId);
 
         Date date = getDateToForecast(days);
 
@@ -179,8 +177,8 @@ public class GridPaneModel {
         return humidityAsString;
     }
 
-    public String getWindForecast(int days) throws APIException {
-        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject();
+    public String getWindForecast(int days, int cityId) throws APIException {
+        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject(cityId);
 
         Date date = getDateToForecast(days);
 
@@ -201,8 +199,8 @@ public class GridPaneModel {
         return windAsStringWithDotAsSeparator;
     }
 
-    public String getPressureForecast(int days) throws APIException {
-        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject();
+    public String getPressureForecast(int days, int cityId) throws APIException {
+        HourlyWeatherForecast cwdFirstCity = initializeForecastWeatherObject(cityId);
 
         Date date = getDateToForecast(days);
 
