@@ -1,15 +1,25 @@
 package it.adamgolub.WeaThereAndHere;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.stream.JsonReader;
+import it.adamgolub.WeaThereAndHere.ConstantValues;
+import it.adamgolub.WeaThereAndHere.InvalidCityNameException;
+import it.adamgolub.WeaThereAndHere.model.City;
+import it.adamgolub.WeaThereAndHere.model.GridPaneModel;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import net.aksingh.owmjapis.api.APIException;
 
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
 import java.util.Map;
 import java.util.Objects;
+import java.util.TreeMap;
 
 /**
  * Created by Adam on 23.12.2019.
@@ -19,14 +29,8 @@ public class GridPaneController {
     private static Integer firstCityId;
     private static Integer secondCityId;
 
-    public static void setFirstCityId(Integer firstCityId) {
-        GridPaneController.firstCityId = firstCityId;
-    }
-
-    public static void setSecondCityId(Integer secondCityId) {
-        GridPaneController.secondCityId = secondCityId;
-    }
-
+    @FXML
+    private Label error;
     @FXML
     private TextField searchingFirstCityName;
     @FXML
@@ -169,18 +173,14 @@ public class GridPaneController {
     @FXML
     private Label pressureInFourDaysSecondCity;
 
-    public GridPaneController() {
-        //System.out.println("Jestem kontrolerem");
-    }
-
-    private Map<String, Integer> citiesMap;
+    GridPaneModel gridPaneModel = new GridPaneModel();
+    private Map<String, Integer> citiesMap = new TreeMap<>();
 
     @FXML
     void initialize () throws APIException {
 
         try {
-            JSONConverter jsonConverter = new JSONConverter();
-            citiesMap = jsonConverter.getCitiesMapFromJSON(ConstantValues.JSON_FILE_WITH_CITIES);
+            citiesMap = getCitiesMapFromJSON(ConstantValues.JSON_FILE_WITH_CITIES);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -188,13 +188,66 @@ public class GridPaneController {
 
 
 
-
-
-        GridPaneModel gridPaneModel = new GridPaneModel();
-
         getWeatherFirstCity(gridPaneModel);
 
         getWeatherSecondCity(gridPaneModel);
+
+        setAutoCompleteTextFields();
+    }
+
+    private Map<String, Integer> getCitiesMapFromJSON(String source) throws FileNotFoundException {
+
+        try {
+            JsonReader reader = new JsonReader(new InputStreamReader(getClass().getResourceAsStream(source)));
+            Gson gson = new GsonBuilder().create();
+            City[] cities = gson.fromJson(reader, City[].class);
+
+            for (City city : cities) {
+                citiesMap.put(city.getName() + "," + city.getCountry(), city.getId());
+            }
+
+            return citiesMap;
+        } catch (NullPointerException | JsonSyntaxException e) {
+            throw new FileNotFoundException();
+        }
+    }
+
+    @FXML
+    public void changeUserCity() {
+
+        try {
+            firstCityId = getCityId(searchingFirstCityName.getText());
+            getWeatherFirstCity(gridPaneModel);
+        } catch (APIException | InvalidCityNameException e) {
+            error.setText("Wybierz miejscowość z listy!");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            showErrorMessage();
+            e.printStackTrace();
+        }
+    }
+
+    private void showErrorMessage() {
+
+        Label label = new Label("Przepraszamy, serwis chwilowo nieczynny. Proszę spróbować później.");
+        label.getStyleClass().addAll("text-black", "text-20");
+        //gridPaneModel.getChildren().clear();
+        //gridPaneModel.getChildren().add(label);
+    }
+
+    private void setAutoCompleteTextFields() {
+
+        gridPaneModel.setAutoCompleteTextField(searchingFirstCityName, citiesMap);
+        //gridPaneModel.setAutoCompleteTextField(travelTextFieldSearch, citiesMap);
+    }
+
+    public Integer getCityId(String cityName) throws InvalidCityNameException {
+
+        if (citiesMap.containsKey(cityName)) {
+            return citiesMap.get(cityName);
+        } else {
+            throw new InvalidCityNameException();
+        }
     }
 
     private void getWeatherFirstCity(GridPaneModel gridPaneModel) throws APIException {

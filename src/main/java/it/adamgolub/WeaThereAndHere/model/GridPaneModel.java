@@ -1,29 +1,30 @@
-package it.adamgolub.WeaThereAndHere;
+package it.adamgolub.WeaThereAndHere.model;
 
+import it.adamgolub.WeaThereAndHere.ConstantValues;
+import javafx.scene.control.TextField;
 import net.aksingh.owmjapis.api.APIException;
 import net.aksingh.owmjapis.core.OWM;
 import net.aksingh.owmjapis.model.CurrentWeather;
 import net.aksingh.owmjapis.model.HourlyWeatherForecast;
+import org.controlsfx.control.textfield.TextFields;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Created by Adam on 26.12.2019.
  */
 public class GridPaneModel {
 
-    private OWM owmFirstCity;
-
-    public GridPaneModel() {
-
-    }
+    private OWM owmCity;
 
     @NotNull
     private CurrentWeather initializeCurrentWeatherObject(int cityId) throws APIException {
-        owmFirstCity = new OWM(ConstantValues.API_KEY);
-        return owmFirstCity.currentWeatherByCityId(cityId);
+        owmCity = new OWM(ConstantValues.API_KEY);
+        return owmCity.currentWeatherByCityId(cityId);
     }
 
     public String getCityName(int cityId) throws APIException {
@@ -45,8 +46,7 @@ public class GridPaneModel {
     public String getMaxTempToday(int cityId) throws APIException {
         CurrentWeather cwdFirstCity = initializeCurrentWeatherObject(cityId);
 
-        double tempInCelsiusDegrees =
-                Objects.requireNonNull(cwdFirstCity.getMainData()).getTempMax() - ConstantValues.KELVIN_CELSIUS_COEFFICIENT;
+        double tempInCelsiusDegrees = cwdFirstCity.getMainData().getTempMax() - ConstantValues.KELVIN_CELSIUS_COEFFICIENT;
         int tempInCelsiusDegreesAsInteger = (int) Math.round(tempInCelsiusDegrees);
 
         return String.valueOf(tempInCelsiusDegreesAsInteger);
@@ -55,7 +55,7 @@ public class GridPaneModel {
     public String getMinTempToday(int cityId) throws APIException {
         CurrentWeather cwdFirstCity = initializeCurrentWeatherObject(cityId);
 
-        double tempInCelsiusDegrees = Objects.requireNonNull(cwdFirstCity.getMainData()).getTempMin() - ConstantValues.KELVIN_CELSIUS_COEFFICIENT;
+        double tempInCelsiusDegrees = cwdFirstCity.getMainData().getTempMin() - ConstantValues.KELVIN_CELSIUS_COEFFICIENT;
         int tempInCelsiusDegreesAsInteger = (int) Math.round(tempInCelsiusDegrees);
 
         return String.valueOf(tempInCelsiusDegreesAsInteger);
@@ -89,8 +89,8 @@ public class GridPaneModel {
 
     @NotNull
     private HourlyWeatherForecast initializeForecastWeatherObject(int cityId) throws APIException {
-        owmFirstCity = new OWM(ConstantValues.API_KEY);
-        return owmFirstCity.hourlyWeatherForecastByCityId(cityId);
+        owmCity = new OWM(ConstantValues.API_KEY);
+        return owmCity.hourlyWeatherForecastByCityId(cityId);
     }
 
     @NotNull
@@ -107,7 +107,7 @@ public class GridPaneModel {
         return date;
     }
 
-    public String getDateForecast(int days) throws APIException {
+    public String getDateForecast(int days) {
 
         Date day = getDateToForecast(days);
         SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
@@ -145,7 +145,7 @@ public class GridPaneModel {
         for (int i = 0; i < 40; i++) {
 
             if (Objects.equals(Objects.requireNonNull(cwdFirstCity.getDataList()).get(i).getDateTime(), date)) {
-                temperature = Objects.requireNonNull(cwdFirstCity.getDataList().get(i).getMainData()).getTemp() - ConstantValues.KELVIN_CELSIUS_COEFFICIENT;
+                temperature = cwdFirstCity.getDataList().get(i).getMainData().getTemp() - ConstantValues.KELVIN_CELSIUS_COEFFICIENT;
                 int temperatureAsInteger = (int) Math.round(temperature);
                 temperatureAsString = String.valueOf(temperatureAsInteger);
                 break;
@@ -167,7 +167,7 @@ public class GridPaneModel {
         for (int i = 0; i < 40; i++) {
 
             if (Objects.equals(Objects.requireNonNull(cwdFirstCity.getDataList()).get(i).getDateTime(), date)) {
-                humidity = Objects.requireNonNull(cwdFirstCity.getDataList().get(i).getMainData()).getHumidity();
+                humidity = cwdFirstCity.getDataList().get(i).getMainData().getHumidity();
                 int tempMaxAsInteger = (int) Math.round(humidity);
                 humidityAsString = String.valueOf(tempMaxAsInteger);
                 break;
@@ -189,7 +189,7 @@ public class GridPaneModel {
         for (int i = 0; i < 40; i++) {
 
             if (Objects.equals(cwdFirstCity.getDataList().get(i).getDateTime(), date)) {
-                wind = Objects.requireNonNull(cwdFirstCity.getDataList().get(i).getWindData()).getSpeed();
+                wind = cwdFirstCity.getDataList().get(i).getWindData().getSpeed();
                 windAsString = String.format("%.1f", wind);
                 windAsStringWithDotAsSeparator = windAsString.replace(',', '.');
                 break;
@@ -210,7 +210,7 @@ public class GridPaneModel {
         for (int i = 0; i < 40; i++) {
 
             if (Objects.equals(cwdFirstCity.getDataList().get(i).getDateTime(), date)) {
-                pressure = Objects.requireNonNull(cwdFirstCity.getDataList().get(i).getMainData()).getPressure();
+                pressure = cwdFirstCity.getDataList().get(i).getMainData().getPressure();
                 int pressureAsInteger = (int) Math.round(pressure);
                 pressureAsString = String.valueOf(pressureAsInteger);
                 break;
@@ -220,5 +220,11 @@ public class GridPaneModel {
         return pressureAsString;
     }
 
+    public void setAutoCompleteTextField(TextField textField, Map<String, Integer> map) throws IllegalAccessError{
 
+        //TextFields.bindAutoCompletion(textField,"test","temp","tempurature","table","tablet");
+            TextFields.bindAutoCompletion(textField,
+                    t -> map.keySet().stream().filter(elem -> elem.toLowerCase().startsWith(t.getUserText().toLowerCase())).collect(Collectors.toList()));
+
+    }
 }

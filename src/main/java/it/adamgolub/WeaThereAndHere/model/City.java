@@ -1,4 +1,4 @@
-package it.adamgolub.WeaThereAndHere;
+package it.adamgolub.WeaThereAndHere.model;
 
 public class City {
 
