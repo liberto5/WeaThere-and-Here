@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.stream.JsonReader;
 import it.adamgolub.WeaThereAndHere.constant.ConstantValues;
+import it.adamgolub.WeaThereAndHere.exception.IncorrectCityNameException;
 import it.adamgolub.WeaThereAndHere.model.City;
 import it.adamgolub.WeaThereAndHere.model.GridPaneModel;
 import javafx.fxml.FXML;
@@ -177,7 +178,7 @@ public class GridPaneController {
     void initialize () throws APIException {
 
         try {
-            citiesMap = getCitiesMapFromJSON(ConstantValues.JSON_FILE_WITH_CITIES);
+            citiesMap = getCitiesFromJSON();
         } catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
@@ -190,10 +191,9 @@ public class GridPaneController {
         setAutoCompleteTextFields();
     }
 
-    private Map<String, Integer> getCitiesMapFromJSON(String source) throws FileNotFoundException {
-
+    private Map<String, Integer> getCitiesFromJSON() throws FileNotFoundException {
         try {
-            JsonReader reader = new JsonReader(new InputStreamReader(getClass().getResourceAsStream(source)));
+            JsonReader reader = new JsonReader(new InputStreamReader(getClass().getResourceAsStream(ConstantValues.JSON_FILE_WITH_CITIES)));
             Gson gson = new GsonBuilder().create();
             City[] cities = gson.fromJson(reader, City[].class);
 
@@ -209,12 +209,11 @@ public class GridPaneController {
 
     @FXML
     public void changeFirstCity() {
-
         try {
             firstCityId = getCityId(searchingFirstCityName.getText());
 
             getWeatherFirstCity(gridPaneModel);
-        } catch (APIException | InvalidCityNameException e) {
+        } catch (APIException | IncorrectCityNameException e) {
             firstCityName.setText("Wybierz miejscowość z listy!");
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -225,11 +224,10 @@ public class GridPaneController {
 
     @FXML
     public void changeSecondCity() {
-
         try {
             secondCityId = getCityId(searchingSecondCityName.getText());
             getWeatherSecondCity(gridPaneModel);
-        } catch (APIException | InvalidCityNameException e) {
+        } catch (APIException | IncorrectCityNameException e) {
             secondCityName.setText("Wybierz miejscowość z listy!");
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -239,17 +237,15 @@ public class GridPaneController {
     }
 
     private void setAutoCompleteTextFields() {
-
         gridPaneModel.setAutoCompleteTextField(searchingFirstCityName, citiesMap);
         gridPaneModel.setAutoCompleteTextField(searchingSecondCityName, citiesMap);
     }
 
-    public Integer getCityId(String cityName) throws InvalidCityNameException {
-
+    public Integer getCityId(String cityName) throws IncorrectCityNameException {
         if (citiesMap.containsKey(cityName)) {
             return citiesMap.get(cityName);
         } else {
-            throw new InvalidCityNameException();
+            throw new IncorrectCityNameException();
         }
     }
 
@@ -402,7 +398,6 @@ public class GridPaneController {
     }
 
     private String setWeatherIconSymbol(String icon) {
-
         String path = "";
 
         switch(icon) {
