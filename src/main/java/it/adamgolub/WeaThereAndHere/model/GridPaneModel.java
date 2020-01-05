@@ -1,6 +1,6 @@
 package it.adamgolub.WeaThereAndHere.model;
 
-import it.adamgolub.WeaThereAndHere.ConstantValues;
+import it.adamgolub.WeaThereAndHere.constant.ConstantValues;
 import javafx.scene.control.TextField;
 import net.aksingh.owmjapis.api.APIException;
 import net.aksingh.owmjapis.core.OWM;
@@ -9,7 +9,6 @@ import net.aksingh.owmjapis.model.HourlyWeatherForecast;
 import org.controlsfx.control.textfield.TextFields;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -221,8 +220,6 @@ public class GridPaneModel {
     }
 
     public void setAutoCompleteTextField(TextField textField, Map<String, Integer> map) throws IllegalAccessError{
-
-        //TextFields.bindAutoCompletion(textField,"test","temp","tempurature","table","tablet");
             TextFields.bindAutoCompletion(textField,
                     t -> map.keySet().stream().filter(elem -> elem.toLowerCase().startsWith(t.getUserText().toLowerCase())).collect(Collectors.toList()));
 

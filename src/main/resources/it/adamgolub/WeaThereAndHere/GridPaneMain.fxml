@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane fx:id="GridPane" alignment="TOP_CENTER" prefHeight="408.0" prefWidth="700.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.adamgolub.WeaThereAndHere.GridPaneController">
+<GridPane fx:id="gridPane" alignment="TOP_CENTER" prefHeight="408.0" prefWidth="700.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.adamgolub.WeaThereAndHere.GridPaneController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="350.0" prefWidth="350.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="350.0" prefWidth="350.0" />
@@ -36,7 +36,6 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <Label fx:id="error" text="error" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="27.0" prefWidth="304.0">
@@ -1074,8 +1073,18 @@
                   <Font name="Palatino Linotype" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="searchingFirstCityName" style="-fx-background-color: #f1ffcc; -fx-border-color: #b5b5b5; -fx-border-radius: 4;" />
-            <Button mnemonicParsing="false" onAction="#changeUserCity" text="Button" />
+            <TextField fx:id="searchingFirstCityName" onAction="#changeFirstCity" style="-fx-background-color: #f1ffcc; -fx-border-width: 1 0 1 1; -fx-border-color: #b5b5b5; -fx-border-radius: 2;" />
+            <Button maxHeight="19.0" maxWidth="19.0" mnemonicParsing="false" onAction="#changeFirstCity" style="-fx-background-color: #f1ffcc; -fx-border-width: 1 1 1 0; -fx-border-color: #b5b5b5; -fx-border-radius: 2;">
+               <graphic>
+                  <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/lupa.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="-3.0" />
+               </HBox.margin></Button>
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -1085,7 +1094,19 @@
                   <Font name="Palatino Linotype" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="searchingSecondCityName" style="-fx-background-color: #f1ffcc; -fx-border-color: #b5b5b5; -fx-border-radius: 4;" />
+            <TextField fx:id="searchingSecondCityName" onAction="#changeSecondCity" style="-fx-background-color: #f1ffcc; -fx-border-color: #b5b5b5; -fx-border-radius: 4;" />
+            <Button maxHeight="19.0" maxWidth="19.0" mnemonicParsing="false" onAction="#changeSecondCity" style="-fx-background-color: #f1ffcc; -fx-border-width: 1 1 1 0; -fx-border-color: #b5b5b5; -fx-border-radius: 2;">
+               <graphic>
+                  <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/lupa.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="-3.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
    </children>
