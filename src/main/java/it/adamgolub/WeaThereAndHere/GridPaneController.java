@@ -4,8 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.stream.JsonReader;
-import it.adamgolub.WeaThereAndHere.ConstantValues;
-import it.adamgolub.WeaThereAndHere.InvalidCityNameException;
+import it.adamgolub.WeaThereAndHere.constant.ConstantValues;
 import it.adamgolub.WeaThereAndHere.model.City;
 import it.adamgolub.WeaThereAndHere.model.GridPaneModel;
 import javafx.fxml.FXML;
@@ -29,8 +28,6 @@ public class GridPaneController {
     private static Integer firstCityId;
     private static Integer secondCityId;
 
-    @FXML
-    private Label error;
     @FXML
     private TextField searchingFirstCityName;
     @FXML
@@ -186,8 +183,6 @@ public class GridPaneController {
             e.printStackTrace();
         }
 
-
-
         getWeatherFirstCity(gridPaneModel);
 
         getWeatherSecondCity(gridPaneModel);
@@ -203,7 +198,7 @@ public class GridPaneController {
             City[] cities = gson.fromJson(reader, City[].class);
 
             for (City city : cities) {
-                citiesMap.put(city.getName() + "," + city.getCountry(), city.getId());
+                citiesMap.put(city.getName() + ", " + city.getCountry(), city.getId());
             }
 
             return citiesMap;
@@ -213,32 +208,40 @@ public class GridPaneController {
     }
 
     @FXML
-    public void changeUserCity() {
+    public void changeFirstCity() {
 
         try {
             firstCityId = getCityId(searchingFirstCityName.getText());
+
             getWeatherFirstCity(gridPaneModel);
         } catch (APIException | InvalidCityNameException e) {
-            error.setText("Wybierz miejscowość z listy!");
+            firstCityName.setText("Wybierz miejscowość z listy!");
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            showErrorMessage();
+            firstCityName.setText("Usługa niedostępna. Spróbuj później.");
             e.printStackTrace();
         }
     }
 
-    private void showErrorMessage() {
+    @FXML
+    public void changeSecondCity() {
 
-        Label label = new Label("Przepraszamy, serwis chwilowo nieczynny. Proszę spróbować później.");
-        label.getStyleClass().addAll("text-black", "text-20");
-        //gridPaneModel.getChildren().clear();
-        //gridPaneModel.getChildren().add(label);
+        try {
+            secondCityId = getCityId(searchingSecondCityName.getText());
+            getWeatherSecondCity(gridPaneModel);
+        } catch (APIException | InvalidCityNameException e) {
+            secondCityName.setText("Wybierz miejscowość z listy!");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            secondCityName.setText("Usługa niedostępna. Spróbuj później.");
+            e.printStackTrace();
+        }
     }
 
     private void setAutoCompleteTextFields() {
 
         gridPaneModel.setAutoCompleteTextField(searchingFirstCityName, citiesMap);
-        //gridPaneModel.setAutoCompleteTextField(travelTextFieldSearch, citiesMap);
+        gridPaneModel.setAutoCompleteTextField(searchingSecondCityName, citiesMap);
     }
 
     public Integer getCityId(String cityName) throws InvalidCityNameException {
@@ -405,16 +408,12 @@ public class GridPaneController {
         switch(icon) {
 
             case "01d":
+            case "01n":
                 path = "src/main/resources/it/adamgolub/icons/01d.png";
                 break;
-            case "01n":
-                path = "src/main/resources/it/adamgolub/icons/01n.png";
-                break;
             case "02d":
-                path = "src/main/resources/it/adamgolub/icons/02d.png";
-                break;
             case "02n":
-                path = "src/main/resources/it/adamgolub/icons/02n.png";
+                path = "src/main/resources/it/adamgolub/icons/02d.png";
                 break;
             case "03d":
             case "04n":
@@ -442,13 +441,7 @@ public class GridPaneController {
             case "50n":
                 path = "src/main/resources/it/adamgolub/icons/50dn.png";
                 break;
-
         }
-
         return path;
-
     }
-
-
-
 }

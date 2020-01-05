@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -16,9 +17,13 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Scene scene = new Scene(loadFXML());
-        scene.getStylesheets().add("it/adamgolub/css/style.css");
+        scene.getStylesheets().add("/it/adamgolub/css/style.css");
+        stage.setTitle("WeaThere and Here - by Adam Gołub");
+        Image icon = new Image(getClass().getResourceAsStream("/it/adamgolub/icons/favicon.png"));
+        stage.getIcons().add(icon);
         stage.setScene(scene);
         stage.show();
+        stage.setResizable(false);
     }
 
     private static Parent loadFXML() throws IOException {
