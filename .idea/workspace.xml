@@ -1,27 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="WeaThereAndHere" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9c581d03-b9b3-413d-b793-4c34a6df1d6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/CitiesCollection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/model/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/ConstantValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/ConstantValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/ConstantValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/constant/ConstantValues.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/GridPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/GridPaneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/GridPaneModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/model/GridPaneModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/JSONConverter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/model/GridPaneModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/adamgolub/WeaThereAndHere/model/GridPaneModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/WeaThereAndHere/GridPaneMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/it/adamgolub/WeaThereAndHere/GridPaneMain.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/CitiesCollection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/City.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/ConstantValues.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/ConstantValues.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/it/adamgolub/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/01n.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/02n.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/fsxfxcvb .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-04_1530389.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-05_1530388.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-06_1530386.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-07_1530387.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-08_1530385.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-09_1530384.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-12_1530381.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-13_1530380.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-15_1530378.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-16_1530377.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-17_1530376.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-18_1530375.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-19_1530374.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-20_1530372.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-21_1530373.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-25_1530370.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-26_1530361.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-28_1530367.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-29_1530366.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/iconfinder_weather-31_1530364.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/it/adamgolub/icons/sggfdv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/ConstantValues.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/GridPaneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/GridPaneController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/GridPaneMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/GridPaneMain.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/GridPaneModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/JSONConverter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/model/GridPaneModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/model/GridPaneModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/adamgolub/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/01n.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/02n.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/fsxfxcvb .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-04_1530389.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-05_1530388.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-06_1530386.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-07_1530387.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-08_1530385.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-09_1530384.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-12_1530381.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-13_1530380.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-15_1530378.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-16_1530377.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-17_1530376.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-18_1530375.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-19_1530374.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-20_1530372.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-21_1530373.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-25_1530370.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-26_1530361.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-28_1530367.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-29_1530366.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/iconfinder_weather-31_1530364.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/adamgolub/icons/sggfdv.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,29 +107,29 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="weathereandhere" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/target/classes/it/adamgolub/WeaThereAndHere/model" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.22097379" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="it.adamgolub.WeaThereAndHere" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Adam\Desktop\java\WeaThereAndHere\target\classes\it\adamgolub\WeaThereAndHere\model" />
+      <recent name="C:\Users\Adam\Desktop\java\WeaThereAndHere\target\classes\it\adamgolub\WeaThereAndHere" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="it.adamgolub.WeaThereAndHere" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Adam\Desktop\java\WeaThereAndHere\target\classes\it\adamgolub\WeaThereAndHere" />
       <recent name="C:\Users\Adam\Desktop\java\WeaThereAndHere\target\classes\it\adamgolub\WeaThereAndHere\model" />
       <recent name="C:\Users\Adam\Desktop\java\WeaThereAndHere\src\main\resources\it\adamgolub\css" />
       <recent name="C:\Users\Adam\Desktop\java\WeaThereAndHere\src\main\java\it\adamgolub\WeaThereAndHere" />
       <recent name="C:\Users\Adam\Desktop\java\WeaThereAndHere\src\main\resources\it\adamgolub" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="it.adamgolub.WeaThereAndHere" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="it.adamgolub.WeaThereAndHere" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Adam\Desktop\java\WeaThereAndHere\target\classes\it\adamgolub\WeaThereAndHere\model" />
-      <recent name="C:\Users\Adam\Desktop\java\WeaThereAndHere\target\classes\it\adamgolub\WeaThereAndHere" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -218,52 +264,53 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="297" key="#com.intellij.ide.util.PackageChooserDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578212190162" />
-    <state x="-1422" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1578220830522">
-      <screen x="-1920" y="0" width="1536" height="832" />
+    <state x="816" y="305" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1578238321795">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1422" y="197" key="#com.intellij.ide.util.TreeClassChooserDialog/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1578220830522" />
+    <state x="816" y="305" key="#com.intellij.ide.util.TreeClassChooserDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578238321795" />
     <state x="-1218" y="128" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1577021568973">
       <screen x="-1920" y="0" width="1536" height="832" />
     </state>
     <state x="-1218" y="128" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1577021568973" />
-    <state x="734" y="406" width="466" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1578213477021">
+    <state x="734" y="406" width="466" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1578241852381">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="734" y="406" width="466" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578213477021" />
+    <state x="734" y="406" width="466" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578241852381" />
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578212576582">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578212576582" />
-    <state x="1122" y="238" key="FileChooserDialogImpl" timestamp="1578144123678">
+    <state x="1122" y="238" key="FileChooserDialogImpl" timestamp="1578238291835">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1122" y="238" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578144123678" />
-    <state width="1877" height="249" key="GridCell.Tab.0.bottom" timestamp="1578221089043">
+    <state x="1122" y="238" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578238291835" />
+    <state width="1877" height="257" key="GridCell.Tab.0.bottom" timestamp="1578242110009">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="257" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1578220838370" />
-    <state width="1877" height="249" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578221089043" />
+    <state width="1877" height="257" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578242110009" />
     <state width="1557" height="282" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1577017916971" />
     <state width="938" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577048310478" />
-    <state width="1877" height="249" key="GridCell.Tab.0.center" timestamp="1578221089043">
+    <state width="1877" height="257" key="GridCell.Tab.0.center" timestamp="1578242110009">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="257" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1578220838370" />
-    <state width="1877" height="249" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578221089043" />
+    <state width="1877" height="257" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578242110009" />
     <state width="1557" height="282" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1577017916971" />
     <state width="938" height="249" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577048310478" />
-    <state width="1877" height="249" key="GridCell.Tab.0.left" timestamp="1578221089042">
+    <state width="1877" height="257" key="GridCell.Tab.0.left" timestamp="1578242110009">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="257" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1578220838369" />
-    <state width="1877" height="249" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578221089042" />
+    <state width="1877" height="257" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578242110009" />
     <state width="1557" height="282" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1577017916971" />
     <state width="938" height="249" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577048310478" />
-    <state width="1877" height="249" key="GridCell.Tab.0.right" timestamp="1578221089043">
+    <state width="1877" height="257" key="GridCell.Tab.0.right" timestamp="1578242110009">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="257" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1578220838370" />
-    <state width="1877" height="249" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578221089043" />
+    <state width="1877" height="257" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578242110009" />
     <state width="1557" height="282" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1577017916971" />
     <state width="938" height="249" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577048310478" />
     <state width="1877" height="249" key="GridCell.Tab.1.bottom" timestamp="1578221089043">
@@ -298,11 +345,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1375" y="305" key="ReplaceDuplicatesPrompt/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1577520652657" />
-    <state x="440" y="95" width="1273" height="849" key="SettingsEditor" timestamp="1578219553831">
+    <state x="419" y="115" width="1273" height="849" key="SettingsEditor" timestamp="1578238530090">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="842" y="23" key="SettingsEditor/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1578219280668" />
-    <state x="440" y="95" width="1273" height="849" key="SettingsEditor/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578219553831" />
+    <state x="419" y="115" width="1273" height="849" key="SettingsEditor/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578238530090" />
+    <state x="880" y="389" key="classpath-attribute-editor" timestamp="1578238469862">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="880" y="389" key="classpath-attribute-editor/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1578238469862" />
     <state x="1274" y="295" width="540" height="496" key="extract.method.dialog" timestamp="1577694730685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
